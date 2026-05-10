@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="bg" cx="40%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#011208"/>
+      <stop offset="100%" stop-color="#000a05"/>
+    </radialGradient>
+    <radialGradient id="globe" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#059669" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#059669" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bg)"/>
+  <ellipse cx="1100" cy="300" rx="400" ry="350" fill="url(#globe)"/>
+  <ellipse cx="300" cy="700" rx="300" ry="250" fill="url(#orb2)"/>
+
+  <!-- Globe wireframe -->
+  <g stroke="#34d399" stroke-width="0.7" opacity="0.1" fill="none">
+    <!-- Latitude lines -->
+    <ellipse cx="1100" cy="300" rx="200" ry="200"/>
+    <ellipse cx="1100" cy="300" rx="200" ry="150"/>
+    <ellipse cx="1100" cy="300" rx="200" ry="80"/>
+    <ellipse cx="1100" cy="300" rx="200" ry="20"/>
+    <!-- Longitude lines -->
+    <ellipse cx="1100" cy="300" rx="60" ry="200"/>
+    <ellipse cx="1100" cy="300" rx="120" ry="200"/>
+    <ellipse cx="1100" cy="300" rx="180" ry="200"/>
+    <ellipse cx="1100" cy="300" rx="200" ry="200" transform="rotate(45 1100 300)"/>
+    <ellipse cx="1100" cy="300" rx="200" ry="200" transform="rotate(90 1100 300)"/>
+  </g>
+
+  <!-- Topographic contour lines -->
+  <g stroke="#34d399" stroke-width="0.5" opacity="0.06" fill="none">
+    <path d="M0,400 Q100,380 200,420 Q350,470 500,390 Q650,310 800,380 Q900,430 1000,360 Q1100,290 1200,350 Q1320,410 1440,370"/>
+    <path d="M0,430 Q100,410 200,450 Q350,500 500,420 Q650,340 800,410 Q900,460 1000,390 Q1100,320 1200,380 Q1320,440 1440,400"/>
+    <path d="M0,460 Q100,440 200,480 Q350,530 500,450 Q650,370 800,440 Q900,490 1000,420 Q1100,350 1200,410 Q1320,470 1440,430"/>
+    <path d="M0,490 Q100,470 200,510 Q350,560 500,480 Q650,400 800,470 Q900,520 1000,450 Q1100,380 1200,440 Q1320,500 1440,460"/>
+    <path d="M0,520 Q100,500 200,540 Q350,590 500,510 Q650,430 800,500 Q900,550 1000,480 Q1100,410 1200,470 Q1320,530 1440,490"/>
+    <path d="M0,600 Q150,580 300,620 Q450,660 600,590 Q750,520 900,590 Q1050,660 1200,610 Q1340,570 1440,600"/>
+    <path d="M0,650 Q150,630 300,670 Q450,710 600,640 Q750,570 900,640 Q1050,710 1200,660 Q1340,620 1440,650"/>
+    <path d="M0,700 Q150,680 300,720 Q450,760 600,690 Q750,620 900,690 Q1050,760 1200,710 Q1340,670 1440,700"/>
+  </g>
+
+  <!-- Continent blob silhouettes (very subtle) -->
+  <g fill="#34d399" opacity="0.03">
+    <path d="M600,200 Q640,160 700,180 Q760,200 780,250 Q800,300 760,340 Q720,380 670,360 Q620,340 600,290 Q580,240 600,200Z"/>
+    <path d="M750,280 Q800,260 850,280 Q900,300 910,350 Q920,400 880,420 Q840,440 800,420 Q760,400 750,350 Q740,300 750,280Z"/>
+  </g>
+
+  <!-- Location pin dots -->
+  <g fill="#34d399" opacity="0.2">
+    <circle cx="300" cy="300" r="2.5"/>
+    <circle cx="700" cy="200" r="2.5"/>
+    <circle cx="900" cy="450" r="2.5"/>
+    <circle cx="1200" cy="350" r="2.5"/>
+    <circle cx="500" cy="600" r="2.5"/>
+    <!-- connecting lines -->
+    <line x1="300" y1="300" x2="700" y2="200" stroke="#34d399" stroke-width="0.4" stroke-dasharray="4,6"/>
+    <line x1="700" y1="200" x2="900" y2="450" stroke="#34d399" stroke-width="0.4" stroke-dasharray="4,6"/>
+    <line x1="900" y1="450" x2="1200" y2="350" stroke="#34d399" stroke-width="0.4" stroke-dasharray="4,6"/>
+  </g>
+</svg>

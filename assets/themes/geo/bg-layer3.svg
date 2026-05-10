@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#60b8ff" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#60b8ff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softblur">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+
+  <rect width="1440" height="900" fill="none"/>
+
+  <!-- Large foreground globe arc — bottom right, partially cropped -->
+  <g transform="translate(1350, 820)" opacity="0.1" fill="none" stroke="#34d399">
+    <circle r="260" stroke-width="1.2"/>
+    <ellipse rx="260" ry="100" stroke-width="0.7" stroke-dasharray="5,8"/>
+    <ellipse rx="260" ry="180" stroke-width="0.5" stroke-dasharray="3,10"/>
+    <ellipse rx="100" ry="260" stroke-width="0.7"/>
+    <ellipse rx="180" ry="260" stroke-width="0.5" stroke-dasharray="3,10"/>
+    <!-- Equator line -->
+    <line x1="-260" y1="0" x2="260" y2="0" stroke-width="0.8"/>
+    <!-- Prime meridian -->
+    <line x1="0" y1="-260" x2="0" y2="260" stroke-width="0.8"/>
+  </g>
+
+  <!-- Cloud wisps — soft blurred shapes -->
+  <g filter="url(#softblur)" opacity="0.08" fill="#60b8ff">
+    <ellipse cx="200"  cy="120" rx="80" ry="20"/>
+    <ellipse cx="240"  cy="112" rx="50" ry="16"/>
+    <ellipse cx="160"  cy="114" rx="40" ry="14"/>
+    <ellipse cx="900"  cy="80"  rx="90" ry="22"/>
+    <ellipse cx="950"  cy="70"  rx="55" ry="18"/>
+    <ellipse cx="850"  cy="72"  rx="45" ry="16"/>
+    <ellipse cx="1300" cy="350" rx="70" ry="18"/>
+    <ellipse cx="1340" cy="342" rx="45" ry="14"/>
+  </g>
+
+  <!-- Bright foreground terrain glow dots -->
+  <g filter="url(#softblur)">
+    <circle cx="400"  cy="280" r="5" fill="#34d399" opacity="0.35"/>
+    <circle cx="800"  cy="460" r="6" fill="#34d399" opacity="0.3"/>
+    <circle cx="200"  cy="560" r="4" fill="#60b8ff" opacity="0.3"/>
+    <circle cx="1100" cy="320" r="5" fill="#34d399" opacity="0.32"/>
+    <circle cx="640"  cy="700" r="5" fill="#60b8ff" opacity="0.28"/>
+    <circle cx="1260" cy="620" r="4" fill="#34d399" opacity="0.3"/>
+  </g>
+
+  <!-- Crisp foreground specks -->
+  <g fill="#34d399">
+    <circle cx="300"  cy="160" r="1.5" opacity="0.55"/>
+    <circle cx="620"  cy="240" r="1"   opacity="0.5"/>
+    <circle cx="960"  cy="180" r="1.5" opacity="0.5"/>
+    <circle cx="140"  cy="380" r="1"   opacity="0.45"/>
+    <circle cx="740"  cy="560" r="1.5" opacity="0.5"/>
+    <circle cx="1180" cy="480" r="1"   opacity="0.45"/>
+    <circle cx="460"  cy="760" r="1.5" opacity="0.45"/>
+    <circle cx="1060" cy="800" r="1"   opacity="0.4"/>
+  </g>
+  <g fill="#60b8ff">
+    <circle cx="520"  cy="120" r="1.5" opacity="0.5"/>
+    <circle cx="1020" cy="580" r="1"   opacity="0.45"/>
+    <circle cx="280"  cy="820" r="1.5" opacity="0.4"/>
+    <circle cx="1380" cy="200" r="1"   opacity="0.45"/>
+    <circle cx="840"  cy="340" r="1.5" opacity="0.45"/>
+  </g>
+
+  <!-- Corner vignette glows -->
+  <ellipse cx="0"    cy="0"   rx="180" ry="180" fill="url(#glow1)" opacity="0.1"/>
+  <ellipse cx="1440" cy="900" rx="260" ry="260" fill="url(#glow2)" opacity="0.08"/>
+
+  <!-- Foreground scan horizon line -->
+  <line x1="0" y1="450" x2="1440" y2="450" stroke="#34d399" stroke-width="0.3" opacity="0.04"/>
+</svg>
