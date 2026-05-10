@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="QuizSpark — active quiz session.">
+
+  <title>QuizSpark — Quiz</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body data-page="quiz">
+
+  <!-- ── Theme background layers -->
+  <div id="theme-bg" class="theme-bg">
+    <div class="theme-bg__layer theme-bg__layer--1" id="theme-layer-1"></div>
+    <div class="theme-bg__layer theme-bg__layer--2" id="theme-layer-2"></div>
+    <div class="theme-bg__layer theme-bg__layer--3" id="theme-layer-3"></div>
+  </div>
+  <canvas id="particle-canvas"></canvas>
+
+  <div class="page">
+
+    <!-- ── Navigation ──────────────────────────────────────── -->
+    <nav class="nav">
+      <a href="index.html" class="nav__logo">Quiz<span>Spark</span></a>
+      <div class="nav__right">
+        <!-- Score display -->
+        <div style="display:flex;align-items:center;gap:var(--sp-2);
+                    font-family:var(--font-mono);font-size:0.8rem;color:var(--text-3);">
+          <span>Score</span>
+          <span id="current-score"
+                style="color:var(--accent);font-size:1rem;font-weight:600;">0</span>
+        </div>
+        <!-- Abandon quiz -->
+        <a href="index.html"
+           class="btn btn--ghost btn--sm"
+           onclick="return confirm('Abandon this quiz?');">
+          ✕ Quit
+        </a>
+      </div>
+    </nav>
+
+    <!-- ── Quiz wrap ────────────────────────────────────────── -->
+    <main class="quiz-wrap container">
+
+      <!-- Progress bar -->
+      <div class="progress-bar">
+        <div class="progress-bar__fill" id="progress-fill" style="width:0%"></div>
+      </div>
+
+      <!-- Question meta row -->
+      <div class="question-meta">
+        <span class="question-meta__niche" id="question-niche"></span>
+        <div style="display:flex;align-items:center;gap:var(--sp-4);">
+
+          <!-- Timer ring (visible in Blitz mode only) -->
+          <div class="timer-ring-wrap" id="timer-wrap" style="display:none;">
+            <svg class="timer-ring" width="64" height="64" viewBox="0 0 64 64">
+              <circle class="timer-ring__bg"   cx="32" cy="32" r="26"/>
+              <circle class="timer-ring__fill" id="timer-ring-fill"
+                      cx="32" cy="32" r="26"/>
+            </svg>
+            <div class="timer-ring__count" id="timer-count">15</div>
+          </div>
+
+          <span class="question-meta__counter" id="question-counter"></span>
+        </div>
+      </div>
+
+      <!-- Question card -->
+      <div class="question-card">
+        <div class="question-text" id="question-text"></div>
+      </div>
+
+      <!-- Options grid -->
+      <div class="options-grid" id="options-grid"></div>
+
+      <!-- Fun fact reveal -->
+      <div class="fun-fact" id="fun-fact" style="display:none;"></div>
+
+      <!-- Next / results button -->
+      <div style="text-align:center;margin-top:var(--sp-5);">
+        <button id="next-btn" class="btn btn--primary btn--lg" style="display:none;">
+          Next Question →
+        </button>
+      </div>
+
+      <!-- Sudden Death indicator -->
+      <div id="sudden-death-bar" style="display:none;text-align:center;
+           margin-top:var(--sp-4);">
+        <span style="font-family:var(--font-mono);font-size:0.72rem;
+                     letter-spacing:0.1em;color:var(--wrong);
+                     background:var(--wrong-glow);border:1px solid var(--wrong);
+                     padding:4px 14px;border-radius:9999px;">
+          💀 SUDDEN DEATH — one wrong answer ends it
+        </span>
+      </div>
+
+    </main>
+
+  </div><!-- .page -->
+
+  <!-- ── Scripts ─────────────────────────────────────────────
+       Same load order as index.html.
+       ui.js detects data-page="quiz" and calls initQuizPage().
+  ──────────────────────────────────────────────────────────── -->
+  <script src="js/taxonomy.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/themes.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/leaderboard.js"></script>
+  <script src="js/share.js"></script>
+  <script src="js/daily.js"></script>
+  <script src="js/ui.js"></script>
+
+  <script>
+    if (typeof QUESTIONS === 'undefined') var QUESTIONS = [];
+
+    /* ── Quiz page extras ──────────────────────────────────── */
+    (function () {
+
+      /* Show timer ring only in Blitz mode */
+      const raw = sessionStorage.getItem('qs_config');
+      if (raw) {
+        const config = JSON.parse(raw);
+
+        // Show timer ring for Blitz
+        if (config.timerMode === 'blitz') {
+          const wrap = document.getElementById('timer-wrap');
+          if (wrap) wrap.style.display = 'flex';
+        }
+
+        // Show sudden death indicator
+        if (config.timerMode === 'sudden_death') {
+          const bar = document.getElementById('sudden-death-bar');
+          if (bar) bar.style.display = 'block';
+        }
+      }
+
+    })();
+  </script>
+
+</body>
+</html>

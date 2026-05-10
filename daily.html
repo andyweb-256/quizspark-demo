@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="QuizSpark Daily Quiz — 10 fresh questions every day. Same questions for everyone. Come back tomorrow for a new set.">
+
+  <!-- Open Graph -->
+  <meta property="og:title"        content="QuizSpark — Daily Quiz">
+  <meta property="og:description"  content="10 questions. One attempt. Everyone gets the same set. Can you top the daily leaderboard?">
+  <meta property="og:image"        content="assets/og-image.svg">
+  <meta property="og:type"         content="website">
+  <meta name="twitter:card"        content="summary_large_image">
+
+  <title>QuizSpark — Daily Quiz</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body data-page="daily">
+
+  <!-- ── Theme background layers -->
+  <div id="theme-bg" class="theme-bg">
+    <div class="theme-bg__layer theme-bg__layer--1" id="theme-layer-1"></div>
+    <div class="theme-bg__layer theme-bg__layer--2" id="theme-layer-2"></div>
+    <div class="theme-bg__layer theme-bg__layer--3" id="theme-layer-3"></div>
+  </div>
+  <canvas id="particle-canvas"></canvas>
+
+  <div class="page">
+
+    <!-- ── Navigation ──────────────────────────────────────── -->
+    <nav class="nav">
+      <a href="index.html" class="nav__logo">Quiz<span>Spark</span></a>
+      <div class="nav__right">
+        <div class="nav__links">
+          <a href="index.html"       class="nav__link">Play</a>
+          <a href="leaderboard.html" class="nav__link">Leaderboard</a>
+          <a href="about.html"       class="nav__link">About</a>
+        </div>
+        <span class="nav__daily-badge nav__link--active">📅 Daily</span>
+      </div>
+    </nav>
+
+    <!-- ── Daily header ─────────────────────────────────────── -->
+    <header class="daily-header anim-fade-up">
+      <div class="container container--narrow" style="text-align:center;">
+        <div class="daily-date" id="daily-date"></div>
+        <div class="t-display" style="font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:var(--sp-3);">
+          Daily Quiz
+        </div>
+        <p class="t-body text-muted" style="font-size:0.95rem;">
+          10 questions · one attempt · everyone gets the same set
+        </p>
+        <!-- Featured niche badge -->
+        <div id="featured-niche-badge" style="margin-top:var(--sp-4);"></div>
+      </div>
+    </header>
+
+    <main class="container container--narrow" style="padding-bottom:var(--sp-8);">
+
+      <!-- ── Loading state ──────────────────────────────────── -->
+      <div id="daily-loading" style="text-align:center;padding:var(--sp-8) 0;">
+        <div style="font-family:var(--font-mono);font-size:0.8rem;color:var(--text-3);
+                    letter-spacing:0.1em;">Loading today's questions...</div>
+      </div>
+
+      <!-- ── Already played state ───────────────────────────── -->
+      <div id="daily-played" class="daily-played-msg hidden">
+        <div style="font-size:2rem;margin-bottom:var(--sp-3);">✅</div>
+        <div class="t-heading" style="font-size:1.2rem;margin-bottom:var(--sp-2);">
+          You've already played today!
+        </div>
+        <div id="daily-played-score" class="t-mono text-accent"
+             style="font-size:1.4rem;margin-bottom:var(--sp-3);"></div>
+        <div id="daily-played-time"
+             style="font-size:0.8rem;color:var(--text-3);font-family:var(--font-mono);
+                    margin-bottom:var(--sp-5);"></div>
+        <div style="font-size:0.78rem;color:var(--text-3);font-family:var(--font-mono);
+                    margin-bottom:var(--sp-2);">Next quiz in</div>
+        <div id="daily-countdown" class="t-display text-accent"
+             style="font-size:2rem;letter-spacing:0.08em;"></div>
+        <div style="margin-top:var(--sp-5);">
+          <div id="played-share-container"></div>
+        </div>
+      </div>
+
+      <!-- ── Quiz area ──────────────────────────────────────── -->
+      <div id="daily-quiz-area" class="hidden">
+
+        <!-- Progress bar -->
+        <div class="progress-bar" style="margin-bottom:var(--sp-5);">
+          <div class="progress-bar__fill" id="daily-progress-fill" style="width:0%"></div>
+        </div>
+
+        <!-- Question meta row -->
+        <div class="question-meta" style="margin-bottom:var(--sp-4);">
+          <span class="question-meta__niche" id="daily-question-niche"></span>
+          <span class="question-meta__counter" id="daily-question-counter"></span>
+        </div>
+
+        <!-- Question card -->
+        <div class="question-card">
+          <div class="question-text" id="daily-question-text"></div>
+        </div>
+
+        <!-- Options -->
+        <div class="options-grid" id="daily-options-grid"></div>
+
+        <!-- Fun fact -->
+        <div class="fun-fact hidden" id="daily-fun-fact"></div>
+
+        <!-- Next button -->
+        <div style="text-align:center;margin-top:var(--sp-5);">
+          <button id="daily-next-btn" class="btn btn--primary btn--lg hidden">
+            Next Question →
+          </button>
+        </div>
+
+      </div><!-- #daily-quiz-area -->
+
+      <!-- ── Daily results ──────────────────────────────────── -->
+      <div id="daily-results" class="hidden" style="text-align:center;">
+
+        <div style="margin-bottom:var(--sp-6);">
+          <div class="score-circle">
+            <svg viewBox="0 0 160 160" width="160" height="160">
+              <circle class="score-circle__bg" cx="80" cy="80" r="70"/>
+              <circle class="score-circle__fill" id="daily-score-fill"
+                      cx="80" cy="80" r="70"
+                      style="stroke-dashoffset:440;"/>
+            </svg>
+            <div class="score-circle__number">
+              <div class="score-circle__val"  id="daily-score-val"></div>
+              <div class="score-circle__total" id="daily-score-total"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats row -->
+        <div style="display:flex;justify-content:center;gap:var(--sp-6);
+                    flex-wrap:wrap;margin-bottom:var(--sp-5);">
+          <div>
+            <div style="font-family:var(--font-mono);font-size:0.65rem;
+                        letter-spacing:0.1em;color:var(--text-3);text-transform:uppercase;">
+              Time
+            </div>
+            <div id="daily-result-time"
+                 style="font-family:var(--font-mono);font-size:1.1rem;color:var(--text-1);
+                        margin-top:2px;"></div>
+          </div>
+          <div>
+            <div style="font-family:var(--font-mono);font-size:0.65rem;
+                        letter-spacing:0.1em;color:var(--text-3);text-transform:uppercase;">
+              Streak
+            </div>
+            <div id="daily-result-streak"
+                 style="font-family:var(--font-mono);font-size:1.1rem;
+                        margin-top:2px;"></div>
+          </div>
+        </div>
+
+        <!-- Share button -->
+        <div id="daily-share-container" style="margin-bottom:var(--sp-5);"></div>
+
+        <!-- Leaderboard submit -->
+        <div id="daily-lb-form"
+             style="background:var(--bg-2);border:1px solid var(--border);
+                    border-radius:var(--r-lg);padding:var(--sp-5);
+                    margin-bottom:var(--sp-5);">
+          <div style="font-family:var(--font-mono);font-size:0.72rem;
+                      letter-spacing:0.08em;color:var(--text-3);
+                      text-transform:uppercase;margin-bottom:var(--sp-3);">
+            Submit to daily leaderboard
+          </div>
+          <div style="display:flex;gap:var(--sp-3);">
+            <input id="daily-lb-name" type="text" maxlength="20"
+                   placeholder="Your name"
+                   style="flex:1;background:var(--bg-3);border:1px solid var(--border);
+                          border-radius:var(--r-md);padding:var(--sp-3) var(--sp-4);
+                          color:var(--text-1);font-size:0.9rem;outline:none;">
+            <button id="daily-lb-submit" class="btn btn--primary">
+              Submit
+            </button>
+          </div>
+        </div>
+
+        <!-- Daily leaderboard -->
+        <div style="text-align:left;">
+          <div class="section-label" style="margin-bottom:var(--sp-4);">
+            <span class="t-label text-dimmed">Today's leaderboard</span>
+          </div>
+          <div id="daily-leaderboard-rows"></div>
+        </div>
+
+        <!-- Play regular quiz CTA -->
+        <div style="margin-top:var(--sp-7);">
+          <a href="index.html" class="btn btn--ghost btn--lg">
+            Play a full quiz →
+          </a>
+        </div>
+
+      </div><!-- #daily-results -->
+
+    </main>
+
+    <!-- ── Footer ──────────────────────────────────────────── -->
+    <footer style="border-top:1px solid var(--border);padding:var(--sp-5) 0;text-align:center;">
+      <div class="container">
+        <div style="display:flex;align-items:center;justify-content:center;
+                    gap:var(--sp-5);flex-wrap:wrap;">
+          <span class="nav__logo" style="font-size:1rem;">Quiz<span>Spark</span></span>
+          <a href="index.html"       style="color:var(--text-3);font-size:0.8rem;">Play</a>
+          <a href="leaderboard.html" style="color:var(--text-3);font-size:0.8rem;">Leaderboard</a>
+          <a href="about.html"       style="color:var(--text-3);font-size:0.8rem;">About</a>
+        </div>
+      </div>
+    </footer>
+
+  </div><!-- .page -->
+
+  <!-- ── Scripts ─────────────────────────────────────────────
+       Same load order as index.html.
+       daily.js handles all the page logic for this page.
+  ──────────────────────────────────────────────────────────── -->
+  <script src="js/taxonomy.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/themes.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/leaderboard.js"></script>
+  <script src="js/share.js"></script>
+  <script src="js/daily.js"></script>
+  <script src="js/ui.js"></script>
+
+  <script>
+    if (typeof QUESTIONS === 'undefined') var QUESTIONS = [];
+
+    /* ── Daily page controller ─────────────────────────────── */
+    (function () {
+
+      const keys      = ['A','B','C','D'];
+      let   answered  = false;
+      let   sdCurrent = null; // current shuffled data
+
+      /* ── Set today's date display ────────────────────────── */
+      const dateEl = document.getElementById('daily-date');
+      if (dateEl) dateEl.textContent = Daily.getDisplayDate();
+
+      /* ── Featured niche badge ────────────────────────────── */
+      const badgeEl = document.getElementById('featured-niche-badge');
+      const nicheMeta = Daily.getFeaturedNicheMeta();
+      if (badgeEl && nicheMeta) {
+        badgeEl.innerHTML = `
+          <span style="display:inline-flex;align-items:center;gap:6px;
+                       font-family:var(--font-mono);font-size:0.72rem;
+                       letter-spacing:0.08em;color:var(--accent);
+                       background:var(--accent-dim);
+                       border:1px solid var(--accent-glow);
+                       padding:4px 14px;border-radius:9999px;">
+            ${nicheMeta.icon || ''} ${nicheMeta.label || nicheMeta.key}
+          </span>`;
+      }
+
+      /* ── Apply niche theme for the page ─────────────────── */
+      const featuredKey = Daily.getFeaturedKey();
+      if (typeof Themes !== 'undefined') {
+        Themes.apply(featuredKey, { splash: false });
+      }
+
+      /* ── Helper: show/hide sections ─────────────────────── */
+      function show(id) {
+        const el = document.getElementById(id);
+        if (el) el.classList.remove('hidden');
+      }
+      function hide(id) {
+        const el = document.getElementById(id);
+        if (el) el.classList.add('hidden');
+      }
+
+      /* ── Init Daily ──────────────────────────────────────── */
+      Daily.init({
+
+        onReady: function () {
+          hide('daily-loading');
+          show('daily-quiz-area');
+        },
+
+        onAlreadyPlayed: function (scoreData) {
+          hide('daily-loading');
+          show('daily-played');
+
+          if (scoreData) {
+            const scoreEl = document.getElementById('daily-played-score');
+            const timeEl  = document.getElementById('daily-played-time');
+            if (scoreEl) scoreEl.textContent = `${scoreData.score} / ${scoreData.total} correct`;
+            if (timeEl)  timeEl.textContent  = `Time: ${Share.formatTime(scoreData.time)}`;
+
+            // Share button for already-played state
+            const shareWrap = document.getElementById('played-share-container');
+            if (shareWrap && typeof Share !== 'undefined') {
+              const meta = typeof Themes !== 'undefined'
+                ? Themes.getMeta(featuredKey) : null;
+              Share.renderShareButton(shareWrap, {
+                niche    : featuredKey,
+                nicheName: meta ? meta.label : featuredKey,
+                score    : scoreData.score,
+                total    : scoreData.total,
+                timeSec  : scoreData.time,
+                difficulty: 'adaptive',
+                timerMode : 'chill',
+                streak   : Storage.getStreak().count,
+                isDaily  : true,
+              });
+            }
+          }
+        },
+
+        onCountdown: function (secondsLeft) {
+          const el = document.getElementById('daily-countdown');
+          if (el) el.textContent = Daily.formatCountdown(secondsLeft);
+        },
+
+        onQuestion: function (q, sd, index, total) {
+          answered  = false;
+          sdCurrent = sd;
+
+          // Progress
+          const fill = document.getElementById('daily-progress-fill');
+          if (fill) fill.style.width = `${(index / total) * 100}%`;
+
+          // Counter
+          const counter = document.getElementById('daily-question-counter');
+          if (counter) counter.textContent = `${index + 1} / ${total}`;
+
+          // Niche badge
+          const niche = document.getElementById('daily-question-niche');
+          if (niche) {
+            const meta = typeof Themes !== 'undefined'
+              ? Themes.getMeta(q.niche) : null;
+            niche.textContent = meta ? `${meta.icon} ${meta.label}` : q.niche;
+          }
+
+          // Question text
+          const qText = document.getElementById('daily-question-text');
+          if (qText) {
+            qText.textContent = q.question;
+            qText.classList.remove('anim-fade-up');
+            void qText.offsetWidth;
+            qText.classList.add('anim-fade-up');
+          }
+
+          // Options
+          const grid = document.getElementById('daily-options-grid');
+          if (grid) {
+            grid.innerHTML = sd.options.map((opt, i) => `
+              <button class="option-btn" data-index="${i}">
+                <span class="option-btn__key">${keys[i]}</span>
+                <span class="option-btn__text">${opt}</span>
+              </button>
+            `).join('');
+
+            grid.querySelectorAll('.option-btn').forEach(btn => {
+              btn.addEventListener('click', function () {
+                if (answered) return;
+                answered = true;
+                Daily.answer(parseInt(this.dataset.index, 10));
+              });
+            });
+          }
+
+          // Hide fun fact + next btn
+          hide('daily-fun-fact');
+          const nextBtn = document.getElementById('daily-next-btn');
+          if (nextBtn) nextBtn.classList.add('hidden');
+        },
+
+        onAnswer: function (result) {
+          const grid = document.getElementById('daily-options-grid');
+          if (grid) {
+            grid.querySelectorAll('.option-btn').forEach(btn => {
+              btn.disabled = true;
+              const idx = parseInt(btn.dataset.index, 10);
+              if (idx === result.correctIndex) {
+                btn.classList.add('option-btn--correct', 'anim-correct-pop');
+              } else if (idx === result.chosenIndex && !result.isCorrect) {
+                btn.classList.add('option-btn--wrong', 'anim-shake');
+              }
+            });
+          }
+
+          // Fun fact
+          if (result.funFact) {
+            const ff = document.getElementById('daily-fun-fact');
+            if (ff) {
+              ff.classList.remove('hidden');
+              ff.innerHTML = `<div class="fun-fact__label">Did you know?</div>${result.funFact}`;
+            }
+          }
+
+          // Next button
+          const nextBtn = document.getElementById('daily-next-btn');
+          if (nextBtn) {
+            const isLast = result.questionIndex + 1 >= result.total;
+            nextBtn.classList.remove('hidden');
+            nextBtn.textContent = isLast ? 'See Results' : 'Next Question →';
+          }
+        },
+
+        onSessionEnd: function (result) {
+          hide('daily-quiz-area');
+          show('daily-results');
+
+          // Score circle
+          const val   = document.getElementById('daily-score-val');
+          const total = document.getElementById('daily-score-total');
+          const fill  = document.getElementById('daily-score-fill');
+          if (val)   val.textContent   = result.score;
+          if (total) total.textContent = `/ ${result.total}`;
+          if (fill) {
+            const pct    = result.score / result.total;
+            const offset = 440 - (pct * 440);
+            setTimeout(() => { fill.style.strokeDashoffset = offset; }, 100);
+          }
+
+          // Time
+          const timeEl = document.getElementById('daily-result-time');
+          if (timeEl) timeEl.textContent = Share.formatTime(result.totalTimeSec);
+
+          // Streak
+          const streakEl = document.getElementById('daily-result-streak');
+          if (streakEl) {
+            streakEl.innerHTML = result.streak > 1
+              ? `<span class="streak-badge">🔥 ${result.streak} days</span>`
+              : `<span style="color:var(--text-3)">—</span>`;
+          }
+
+          // Share button
+          const shareWrap = document.getElementById('daily-share-container');
+          if (shareWrap && typeof Share !== 'undefined') {
+            const meta = typeof Themes !== 'undefined'
+              ? Themes.getMeta(result.niche) : null;
+            Share.renderShareButton(shareWrap, {
+              niche    : result.niche,
+              nicheName: meta ? meta.label : result.niche,
+              score    : result.score,
+              total    : result.total,
+              timeSec  : result.totalTimeSec,
+              difficulty: 'adaptive',
+              timerMode : 'chill',
+              streak   : result.streak,
+              isDaily  : true,
+            });
+          }
+
+          // Wire leaderboard submit
+          wireDailyLbSubmit(result);
+
+          // Load daily leaderboard
+          loadDailyLeaderboard(true);
+        },
+
+      }); // Daily.init
+
+      /* ── Next button ─────────────────────────────────────── */
+      const nextBtn = document.getElementById('daily-next-btn');
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function () {
+          Daily.next();
+        });
+      }
+
+      /* ── Keyboard support ────────────────────────────────── */
+      document.addEventListener('keydown', function (e) {
+        const map = { a:0, b:1, c:2, d:3, A:0, B:1, C:2, D:3 };
+        if (map[e.key] !== undefined && !answered) {
+          answered = true;
+          Daily.answer(map[e.key]);
+        }
+      });
+
+      /* ── Wire daily leaderboard submit ───────────────────── */
+      function wireDailyLbSubmit(result) {
+        const input = document.getElementById('daily-lb-name');
+        const btn   = document.getElementById('daily-lb-submit');
+        if (!input || !btn) return;
+
+        const prefs = Storage.getPrefs();
+        if (prefs.playerName) input.value = prefs.playerName;
+
+        btn.addEventListener('click', async function () {
+          const name = input.value.trim();
+          if (!name) { input.focus(); return; }
+          btn.disabled    = true;
+          btn.textContent = 'Submitting...';
+
+          const res = await Leaderboard.submit({
+            name,
+            score  : result.score,
+            total  : result.total,
+            time   : result.totalTimeSec,
+            niche  : 'daily',
+            date   : Storage.todayString(),
+            isDaily: true,
+          });
+
+          const form = document.getElementById('daily-lb-form');
+          if (res.ok && form) {
+            form.innerHTML = `<div style="color:var(--correct);font-family:var(--font-mono);
+              font-size:0.8rem;">✓ Submitted! Rank: #${res.rank || '—'}</div>`;
+            Storage.setPref('playerName', name);
+            loadDailyLeaderboard(true);
+          } else {
+            btn.disabled    = false;
+            btn.textContent = 'Submit';
+            Share.showToast('Submission failed — check your connection.');
+          }
+        });
+      }
+
+      /* ── Load daily leaderboard ──────────────────────────── */
+      async function loadDailyLeaderboard(force) {
+        const container = document.getElementById('daily-leaderboard-rows');
+        if (!container || typeof Leaderboard === 'undefined') return;
+        container.innerHTML = `<div style="text-align:center;padding:var(--sp-5);
+          color:var(--text-3);font-family:var(--font-mono);font-size:0.78rem;">
+          Loading...</div>`;
+        const res = await Leaderboard.fetch({
+          niche: 'daily', type: 'daily', limit: 20, force: !!force,
+        });
+        Leaderboard.renderRows(res.entries, container);
+      }
+
+    })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="QuizSpark — your quiz results. See your score, share it, and check the leaderboard.">
+
+  <!-- Open Graph — populated dynamically via JS for share links -->
+  <meta property="og:title"       content="QuizSpark — Results">
+  <meta property="og:description" content="See how I scored on QuizSpark!">
+  <meta property="og:image"       content="assets/og-image.svg">
+  <meta property="og:type"        content="website">
+  <meta name="twitter:card"       content="summary_large_image">
+
+  <title>QuizSpark — Results</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body data-page="results">
+
+  <!-- ── Theme background layers -->
+  <div id="theme-bg" class="theme-bg">
+    <div class="theme-bg__layer theme-bg__layer--1" id="theme-layer-1"></div>
+    <div class="theme-bg__layer theme-bg__layer--2" id="theme-layer-2"></div>
+    <div class="theme-bg__layer theme-bg__layer--3" id="theme-layer-3"></div>
+  </div>
+  <canvas id="particle-canvas"></canvas>
+
+  <div class="page">
+
+    <!-- ── Navigation ──────────────────────────────────────── -->
+    <nav class="nav">
+      <a href="index.html" class="nav__logo">Quiz<span>Spark</span></a>
+      <div class="nav__right">
+        <div class="nav__links">
+          <a href="index.html"       class="nav__link">Play again</a>
+          <a href="leaderboard.html" class="nav__link">Leaderboard</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container container--narrow" style="padding:var(--sp-7) 0 var(--sp-9);">
+
+      <!-- ── Score section ────────────────────────────────── -->
+      <div class="anim-fade-up" style="text-align:center;margin-bottom:var(--sp-7);">
+
+        <!-- Score circle -->
+        <div class="score-circle" style="margin-bottom:var(--sp-5);">
+          <svg viewBox="0 0 160 160" width="160" height="160">
+            <circle class="score-circle__bg"   cx="80" cy="80" r="70"/>
+            <circle class="score-circle__fill" id="score-circle-fill"
+                    cx="80" cy="80" r="70"
+                    style="stroke-dashoffset:440;"/>
+          </svg>
+          <div class="score-circle__number">
+            <div class="score-circle__val"  id="score-value"></div>
+            <div class="score-circle__total" id="score-total"></div>
+          </div>
+        </div>
+
+        <!-- Rank label -->
+        <div style="font-family:var(--font-mono);font-size:0.7rem;
+                    letter-spacing:0.12em;text-transform:uppercase;
+                    color:var(--text-3);margin-bottom:var(--sp-2);">
+          Rank
+        </div>
+        <div id="result-rank"
+             style="font-family:var(--font-display);font-size:1.6rem;
+                    font-weight:900;color:var(--accent);
+                    margin-bottom:var(--sp-5);"></div>
+
+        <!-- Stats row -->
+        <div style="display:flex;justify-content:center;align-items:center;
+                    gap:var(--sp-6);flex-wrap:wrap;margin-bottom:var(--sp-5);">
+
+          <!-- Time -->
+          <div style="text-align:center;">
+            <div style="font-family:var(--font-mono);font-size:0.65rem;
+                        letter-spacing:0.1em;color:var(--text-3);
+                        text-transform:uppercase;margin-bottom:4px;">
+              Time
+            </div>
+            <div id="result-time"
+                 style="font-family:var(--font-mono);font-size:1.1rem;
+                        color:var(--text-1);"></div>
+          </div>
+
+          <!-- Divider -->
+          <div style="width:1px;height:32px;background:var(--border);"></div>
+
+          <!-- High score -->
+          <div style="text-align:center;">
+            <div style="font-family:var(--font-mono);font-size:0.65rem;
+                        letter-spacing:0.1em;color:var(--text-3);
+                        text-transform:uppercase;margin-bottom:4px;">
+              Personal best
+            </div>
+            <div id="high-score"
+                 style="font-family:var(--font-mono);font-size:1rem;
+                        color:var(--text-2);"></div>
+          </div>
+
+        </div>
+
+        <!-- Streak badge -->
+        <div id="result-streak" style="margin-bottom:var(--sp-5);"></div>
+
+        <!-- Share button -->
+        <div id="share-container" style="margin-bottom:var(--sp-4);"></div>
+
+      </div>
+
+      <!-- ── Divider ───────────────────────────────────────── -->
+      <div style="height:1px;background:var(--border);margin-bottom:var(--sp-6);"></div>
+
+      <!-- ── Leaderboard submit ────────────────────────────── -->
+      <div style="margin-bottom:var(--sp-7);">
+        <div class="section-label" style="margin-bottom:var(--sp-4);">
+          <span class="t-label text-dimmed">Submit your score</span>
+        </div>
+
+        <div id="lb-submit-form"
+             style="background:var(--bg-2);border:1px solid var(--border);
+                    border-radius:var(--r-lg);padding:var(--sp-5);">
+          <p style="font-size:0.82rem;color:var(--text-3);
+                    margin-bottom:var(--sp-4);line-height:1.5;">
+            Enter a name to appear on the leaderboard.
+          </p>
+          <div style="display:flex;gap:var(--sp-3);">
+            <input id="lb-name-input"
+                   type="text"
+                   maxlength="20"
+                   placeholder="Your name (max 20 chars)"
+                   style="flex:1;background:var(--bg-3);
+                          border:1px solid var(--border);
+                          border-radius:var(--r-md);
+                          padding:var(--sp-3) var(--sp-4);
+                          color:var(--text-1);font-size:0.9rem;outline:none;
+                          transition:border-color var(--dur-fast);"
+                   onfocus="this.style.borderColor='var(--accent)'"
+                   onblur="this.style.borderColor='var(--border)'">
+            <button id="lb-submit-btn" class="btn btn--primary">
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Leaderboard ───────────────────────────────────── -->
+      <div style="margin-bottom:var(--sp-7);">
+        <div class="section-label" style="margin-bottom:var(--sp-4);">
+          <span class="t-label text-dimmed">Top scores — this niche</span>
+        </div>
+
+        <!-- Tab row: All-time / Daily -->
+        <div style="display:flex;gap:var(--sp-2);margin-bottom:var(--sp-4);">
+          <button id="tab-alltime" class="btn btn--ghost btn--sm"
+                  style="border-color:var(--accent);color:var(--accent);">
+            All-time
+          </button>
+          <button id="tab-daily" class="btn btn--ghost btn--sm">
+            Today
+          </button>
+        </div>
+
+        <div id="leaderboard-rows"></div>
+      </div>
+
+      <!-- ── CTA row ──────────────────────────────────────── -->
+      <div style="display:flex;gap:var(--sp-3);justify-content:center;flex-wrap:wrap;">
+        <a href="index.html"
+           class="btn btn--primary btn--lg">
+          Play again
+        </a>
+        <a href="daily.html"
+           class="btn btn--ghost btn--lg">
+          📅 Daily Quiz
+        </a>
+        <a href="leaderboard.html"
+           class="btn btn--ghost btn--lg">
+          Full leaderboard
+        </a>
+      </div>
+
+    </main>
+
+    <!-- ── Footer ──────────────────────────────────────────── -->
+    <footer style="border-top:1px solid var(--border);padding:var(--sp-5) 0;
+                   text-align:center;">
+      <div class="container">
+        <div style="display:flex;align-items:center;justify-content:center;
+                    gap:var(--sp-5);flex-wrap:wrap;">
+          <span class="nav__logo" style="font-size:1rem;">Quiz<span>Spark</span></span>
+          <a href="index.html"       style="color:var(--text-3);font-size:0.8rem;">Play</a>
+          <a href="daily.html"       style="color:var(--text-3);font-size:0.8rem;">Daily</a>
+          <a href="leaderboard.html" style="color:var(--text-3);font-size:0.8rem;">Leaderboard</a>
+          <a href="about.html"       style="color:var(--text-3);font-size:0.8rem;">About</a>
+        </div>
+      </div>
+    </footer>
+
+  </div><!-- .page -->
+
+  <!-- ── Scripts ─────────────────────────────────────────────
+       ui.js detects data-page="results" and calls initResultsPage().
+  ──────────────────────────────────────────────────────────── -->
+  <script src="js/taxonomy.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/themes.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/leaderboard.js"></script>
+  <script src="js/share.js"></script>
+  <script src="js/daily.js"></script>
+  <script src="js/ui.js"></script>
+
+  <script>
+    if (typeof QUESTIONS === 'undefined') var QUESTIONS = [];
+
+    /* ── Leaderboard tab switcher ──────────────────────────── */
+    (function () {
+      const raw = sessionStorage.getItem('qs_result');
+      if (!raw) return;
+      const result = JSON.parse(raw);
+
+      const tabAlltime = document.getElementById('tab-alltime');
+      const tabDaily   = document.getElementById('tab-daily');
+
+      async function loadTab(type) {
+        const container = document.getElementById('leaderboard-rows');
+        if (!container) return;
+
+        // Update tab styles
+        const activeStyle   = 'border-color:var(--accent);color:var(--accent);';
+        const inactiveStyle = '';
+        if (tabAlltime) tabAlltime.style.cssText = type === 'alltime' ? activeStyle : inactiveStyle;
+        if (tabDaily)   tabDaily.style.cssText   = type === 'daily'   ? activeStyle : inactiveStyle;
+
+        container.innerHTML = `<div style="text-align:center;padding:var(--sp-5);
+          color:var(--text-3);font-family:var(--font-mono);font-size:0.78rem;">
+          Loading...</div>`;
+
+        const res = await Leaderboard.fetch({
+          niche: type === 'daily' ? 'daily' : result.niche,
+          type,
+          limit: 20,
+          force: false,
+        });
+        Leaderboard.renderRows(res.entries, container);
+      }
+
+      if (tabAlltime) tabAlltime.addEventListener('click', () => loadTab('alltime'));
+      if (tabDaily)   tabDaily.addEventListener('click',   () => loadTab('daily'));
+
+    })();
+  </script>
+
+</body>
+</html>

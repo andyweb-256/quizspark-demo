@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="QuizSpark Leaderboard — see the top players across all categories and the daily quiz.">
+
+  <meta property="og:title"       content="QuizSpark — Leaderboard">
+  <meta property="og:description" content="Who's at the top? Check the QuizSpark global and daily leaderboards.">
+  <meta property="og:image"       content="assets/og-image.svg">
+  <meta property="og:type"        content="website">
+  <meta name="twitter:card"       content="summary_large_image">
+
+  <title>QuizSpark — Leaderboard</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body data-page="leaderboard">
+
+  <!-- ── Theme background layers -->
+  <div id="theme-bg" class="theme-bg">
+    <div class="theme-bg__layer theme-bg__layer--1" id="theme-layer-1"></div>
+    <div class="theme-bg__layer theme-bg__layer--2" id="theme-layer-2"></div>
+    <div class="theme-bg__layer theme-bg__layer--3" id="theme-layer-3"></div>
+  </div>
+  <canvas id="particle-canvas"></canvas>
+
+  <div class="page">
+
+    <!-- ── Navigation ──────────────────────────────────────── -->
+    <nav class="nav">
+      <a href="index.html" class="nav__logo">Quiz<span>Spark</span></a>
+      <div class="nav__right">
+        <div class="nav__links">
+          <a href="index.html" class="nav__link">Play</a>
+          <a href="daily.html" class="nav__link">Daily Quiz</a>
+          <a href="about.html" class="nav__link">About</a>
+        </div>
+        <a href="index.html" class="btn btn--primary btn--sm">Play now</a>
+      </div>
+    </nav>
+
+    <!-- ── Header ───────────────────────────────────────────── -->
+    <header style="padding:var(--sp-8) 0 var(--sp-5);text-align:center;"
+            class="anim-fade-up">
+      <div class="container">
+        <div class="t-label text-dimmed" style="margin-bottom:var(--sp-3);">
+          Global Rankings
+        </div>
+        <div class="t-display"
+             style="font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:var(--sp-4);">
+          Leaderboard
+        </div>
+        <p class="t-body text-muted" style="font-size:0.95rem;max-width:420px;margin:0 auto;">
+          Top scores across all niches. Submit your score after any session to appear here.
+        </p>
+      </div>
+    </header>
+
+    <main class="container" style="padding-bottom:var(--sp-9);">
+
+      <!-- ── Niche tab strip ───────────────────────────────── -->
+      <div id="niche-tabs"
+           style="display:flex;flex-wrap:wrap;gap:var(--sp-2);
+                  margin-bottom:var(--sp-6);justify-content:center;">
+        <!-- Populated by JS below -->
+      </div>
+
+      <!-- ── Type tabs: All-time / Today ──────────────────── -->
+      <div style="display:flex;gap:var(--sp-2);margin-bottom:var(--sp-5);">
+        <button id="type-alltime" class="btn btn--ghost btn--sm">All-time</button>
+        <button id="type-daily"   class="btn btn--ghost btn--sm">Today's Daily</button>
+      </div>
+
+      <!-- ── Active niche label ────────────────────────────── -->
+      <div style="display:flex;align-items:center;justify-content:space-between;
+                  margin-bottom:var(--sp-4);flex-wrap:wrap;gap:var(--sp-3);">
+        <div id="active-niche-label"
+             style="font-family:var(--font-display);font-size:1.2rem;
+                    font-weight:700;color:var(--text-1);"></div>
+        <div style="font-family:var(--font-mono);font-size:0.68rem;
+                    letter-spacing:0.08em;color:var(--text-3);">
+          Top 20 scores
+        </div>
+      </div>
+
+      <!-- ── Column headers ────────────────────────────────── -->
+      <div style="display:grid;grid-template-columns:40px 1fr auto auto;
+                  gap:var(--sp-3);padding:var(--sp-2) var(--sp-4);
+                  margin-bottom:var(--sp-2);">
+        <div style="font-family:var(--font-mono);font-size:0.65rem;
+                    letter-spacing:0.1em;color:var(--text-3);text-transform:uppercase;
+                    text-align:center;">#</div>
+        <div style="font-family:var(--font-mono);font-size:0.65rem;
+                    letter-spacing:0.1em;color:var(--text-3);text-transform:uppercase;">
+          Player</div>
+        <div style="font-family:var(--font-mono);font-size:0.65rem;
+                    letter-spacing:0.1em;color:var(--text-3);text-transform:uppercase;">
+          Score</div>
+        <div style="font-family:var(--font-mono);font-size:0.65rem;
+                    letter-spacing:0.1em;color:var(--text-3);text-transform:uppercase;">
+          Time</div>
+      </div>
+
+      <!-- ── Leaderboard rows ──────────────────────────────── -->
+      <div id="leaderboard-rows"
+           style="background:var(--bg-2);border:1px solid var(--border);
+                  border-radius:var(--r-lg);overflow:hidden;
+                  min-height:200px;"></div>
+
+      <!-- ── Your stats ────────────────────────────────────── -->
+      <div id="your-stats"
+           style="margin-top:var(--sp-7);background:var(--bg-2);
+                  border:1px solid var(--border);border-radius:var(--r-lg);
+                  padding:var(--sp-5);">
+        <div class="section-label" style="margin-bottom:var(--sp-4);">
+          <span class="t-label text-dimmed">Your stats</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);
+                    gap:var(--sp-4);text-align:center;">
+          <div>
+            <div style="font-family:var(--font-mono);font-size:0.65rem;
+                        letter-spacing:0.1em;color:var(--text-3);
+                        text-transform:uppercase;margin-bottom:4px;">
+              Games played
+            </div>
+            <div id="stat-games"
+                 style="font-family:var(--font-display);font-size:1.4rem;
+                        font-weight:900;color:var(--accent);"></div>
+          </div>
+          <div>
+            <div style="font-family:var(--font-mono);font-size:0.65rem;
+                        letter-spacing:0.1em;color:var(--text-3);
+                        text-transform:uppercase;margin-bottom:4px;">
+              Accuracy
+            </div>
+            <div id="stat-accuracy"
+                 style="font-family:var(--font-display);font-size:1.4rem;
+                        font-weight:900;color:var(--accent);"></div>
+          </div>
+          <div>
+            <div style="font-family:var(--font-mono);font-size:0.65rem;
+                        letter-spacing:0.1em;color:var(--text-3);
+                        text-transform:uppercase;margin-bottom:4px;">
+              Best streak
+            </div>
+            <div id="stat-streak"
+                 style="font-family:var(--font-display);font-size:1.4rem;
+                        font-weight:900;color:var(--warning);"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── CTA ──────────────────────────────────────────── -->
+      <div style="text-align:center;margin-top:var(--sp-7);">
+        <a href="index.html" class="btn btn--primary btn--lg" style="margin-right:var(--sp-3);">
+          Play now
+        </a>
+        <a href="daily.html" class="btn btn--ghost btn--lg">
+          📅 Daily Quiz
+        </a>
+      </div>
+
+    </main>
+
+    <!-- ── Footer ──────────────────────────────────────────── -->
+    <footer style="border-top:1px solid var(--border);padding:var(--sp-5) 0;
+                   text-align:center;">
+      <div class="container">
+        <div style="display:flex;align-items:center;justify-content:center;
+                    gap:var(--sp-5);flex-wrap:wrap;">
+          <span class="nav__logo" style="font-size:1rem;">Quiz<span>Spark</span></span>
+          <a href="index.html"       style="color:var(--text-3);font-size:0.8rem;">Play</a>
+          <a href="daily.html"       style="color:var(--text-3);font-size:0.8rem;">Daily</a>
+          <a href="about.html"       style="color:var(--text-3);font-size:0.8rem;">About</a>
+        </div>
+      </div>
+    </footer>
+
+  </div><!-- .page -->
+
+  <!-- ── Scripts ─────────────────────────────────────────────
+       Leaderboard page handles its own logic inline below.
+  ──────────────────────────────────────────────────────────── -->
+  <script src="js/taxonomy.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/themes.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/leaderboard.js"></script>
+  <script src="js/share.js"></script>
+  <script src="js/daily.js"></script>
+  <script src="js/ui.js"></script>
+
+  <script>
+    if (typeof QUESTIONS === 'undefined') var QUESTIONS = [];
+
+    (function () {
+
+      /* ── State ─────────────────────────────────────────── */
+      let activeNiche = 'sci';
+      let activeType  = 'alltime';
+
+      /* ── Niche metadata ─────────────────────────────────── */
+      const niches = [
+        { key:'sci',  label:'Science',    icon:'⚗️',  color:'#60b8ff' },
+        { key:'hist', label:'History',    icon:'📜',  color:'#fb923c' },
+        { key:'geo',  label:'Geography',  icon:'🌍',  color:'#34d399' },
+        { key:'pop',  label:'Pop Culture',icon:'🎬',  color:'#f472b6' },
+        { key:'spo',  label:'Sports',     icon:'⚽',  color:'#378ADD' },
+        { key:'art',  label:'Arts & Lit', icon:'🎭',  color:'#a78bfa' },
+        { key:'nat',  label:'Nature',     icon:'🌿',  color:'#f97316' },
+        { key:'lang', label:'Language',   icon:'💬',  color:'#94a3b8' },
+        { key:'daily',label:'Daily',      icon:'📅',  color:'#fbbf24' },
+      ];
+
+      /* ── Build niche tab strip ──────────────────────────── */
+      function buildNicheTabs() {
+        const strip = document.getElementById('niche-tabs');
+        if (!strip) return;
+
+        strip.innerHTML = niches.map(n => `
+          <button class="subniche-chip ${n.key === activeNiche ? 'active' : ''}"
+                  data-niche="${n.key}"
+                  style="--accent:${n.color};--accent-dim:${n.color}18;
+                         --accent-glow:${n.color}30;">
+            ${n.icon} ${n.label}
+          </button>
+        `).join('');
+
+        strip.querySelectorAll('[data-niche]').forEach(btn => {
+          btn.addEventListener('click', function () {
+            activeNiche = this.dataset.niche;
+            strip.querySelectorAll('[data-niche]').forEach(b =>
+              b.classList.toggle('active', b.dataset.niche === activeNiche)
+            );
+            updateActiveLabel();
+
+            // Apply theme for selected niche (skip daily)
+            if (activeNiche !== 'daily' && typeof Themes !== 'undefined') {
+              Themes.apply(activeNiche, { splash: false, particles: true });
+            }
+
+            load();
+          });
+        });
+      }
+
+      /* ── Type tab wiring ────────────────────────────────── */
+      function wireTypeTabs() {
+        const btnAll   = document.getElementById('type-alltime');
+        const btnDaily = document.getElementById('type-daily');
+
+        function setType(type) {
+          activeType = type;
+          const activeStyle   = 'border-color:var(--accent);color:var(--accent);';
+          const inactiveStyle = '';
+          if (btnAll)   btnAll.style.cssText   = type === 'alltime' ? activeStyle : inactiveStyle;
+          if (btnDaily) btnDaily.style.cssText  = type === 'daily'   ? activeStyle : inactiveStyle;
+          load();
+        }
+
+        if (btnAll)   btnAll.addEventListener('click',   () => setType('alltime'));
+        if (btnDaily) btnDaily.addEventListener('click', () => setType('daily'));
+
+        // Default: highlight alltime
+        setType('alltime');
+      }
+
+      /* ── Update active niche label ──────────────────────── */
+      function updateActiveLabel() {
+        const meta  = niches.find(n => n.key === activeNiche);
+        const label = document.getElementById('active-niche-label');
+        if (label && meta) {
+          label.textContent = `${meta.icon} ${meta.label}`;
+          label.style.color = meta.color;
+        }
+      }
+
+      /* ── Load leaderboard ───────────────────────────────── */
+      async function load() {
+        const container = document.getElementById('leaderboard-rows');
+        if (!container) return;
+
+        container.innerHTML = `
+          <div style="text-align:center;padding:var(--sp-6);
+               color:var(--text-3);font-family:var(--font-mono);font-size:0.78rem;">
+            Loading...
+          </div>`;
+
+        const nicheKey = activeType === 'daily' ? 'daily' : activeNiche;
+
+        const res = await Leaderboard.fetch({
+          niche: nicheKey,
+          type : activeType,
+          limit: 20,
+          force: false,
+        });
+
+        Leaderboard.renderRows(res.entries, container);
+      }
+
+      /* ── Load your personal stats from localStorage ─────── */
+      function loadYourStats() {
+        const stats  = Storage.getStats();
+        const streak = Storage.getStreak();
+
+        const gamesEl    = document.getElementById('stat-games');
+        const accuracyEl = document.getElementById('stat-accuracy');
+        const streakEl   = document.getElementById('stat-streak');
+
+        if (gamesEl)    gamesEl.textContent    = stats.gamesPlayed;
+        if (accuracyEl) accuracyEl.textContent = `${stats.accuracy}%`;
+        if (streakEl)   streakEl.textContent   = `🔥 ${streak.count}`;
+      }
+
+      /* ── Check for niche param in URL ───────────────────── */
+      function checkUrlParam() {
+        const params = new URLSearchParams(window.location.search);
+        const niche  = params.get('niche');
+        if (niche && niches.find(n => n.key === niche)) {
+          activeNiche = niche;
+        }
+      }
+
+      /* ── Apply default theme ────────────────────────────── */
+      if (typeof Themes !== 'undefined') {
+        Themes.apply(activeNiche, { splash: false, particles: true });
+      }
+
+      /* ── Boot ───────────────────────────────────────────── */
+      checkUrlParam();
+      buildNicheTabs();
+      wireTypeTabs();
+      updateActiveLabel();
+      loadYourStats();
+
+    })();
+  </script>
+
+</body>
+</html>
