@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#0e0614"/>
+      <stop offset="100%" stop-color="#060309"/>
+    </radialGradient>
+    <radialGradient id="orb1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c4b5fd" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#c4b5fd" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bg)"/>
+  <ellipse cx="300" cy="400" rx="400" ry="350" fill="url(#orb1)"/>
+  <ellipse cx="1100" cy="300" rx="350" ry="300" fill="url(#orb2)"/>
+
+  <!-- Theatre curtain drapes (left) -->
+  <g fill="#a78bfa" opacity="0.05">
+    <path d="M0,0 Q60,100 40,200 Q20,300 60,400 Q100,500 60,600 Q20,700 60,800 L0,900 Z"/>
+    <path d="M0,0 Q100,80 80,180 Q60,280 100,380 Q140,480 100,580 Q60,680 100,780 L80,900 L0,900 Z"/>
+  </g>
+
+  <!-- Theatre curtain drapes (right) -->
+  <g fill="#a78bfa" opacity="0.05">
+    <path d="M1440,0 Q1380,100 1400,200 Q1420,300 1380,400 Q1340,500 1380,600 Q1420,700 1380,800 L1440,900 Z"/>
+    <path d="M1440,0 Q1340,80 1360,180 Q1380,280 1340,380 Q1300,480 1340,580 Q1380,680 1340,780 L1360,900 L1440,900 Z"/>
+  </g>
+
+  <!-- Ink brush strokes -->
+  <g stroke="#a78bfa" stroke-width="2" opacity="0.06" fill="none" stroke-linecap="round">
+    <path d="M400,300 Q500,280 600,320 Q700,360 750,300"/>
+    <path d="M600,400 Q700,370 800,410 Q900,450 950,390"/>
+    <path d="M200,500 Q350,470 450,520 Q550,570 600,510"/>
+    <path d="M800,550 Q900,520 1000,570 Q1100,620 1150,560"/>
+  </g>
+
+  <!-- Quill / feather suggestion -->
+  <g stroke="#c4b5fd" stroke-width="0.8" opacity="0.08" fill="none">
+    <path d="M1100,600 Q1050,500 1080,400 Q1110,300 1150,350 Q1190,400 1160,450 Q1130,500 1100,600"/>
+    <path d="M1100,600 L1120,550"/>
+    <path d="M1100,600 L1080,530"/>
+    <path d="M1120,550 Q1145,510 1155,480"/>
+    <path d="M1080,530 Q1060,510 1065,480"/>
+  </g>
+
+  <!-- Scattered letters/text lines (manuscript feel) -->
+  <g stroke="#a78bfa" stroke-width="0.4" opacity="0.05">
+    <line x1="200" y1="700" x2="500" y2="700"/>
+    <line x1="200" y1="715" x2="480" y2="715"/>
+    <line x1="200" y1="730" x2="510" y2="730"/>
+    <line x1="200" y1="745" x2="460" y2="745"/>
+    <line x1="200" y1="760" x2="490" y2="760"/>
+    <line x1="900" y1="700" x2="1200" y2="700"/>
+    <line x1="900" y1="715" x2="1180" y2="715"/>
+    <line x1="900" y1="730" x2="1210" y2="730"/>
+    <line x1="900" y1="745" x2="1160" y2="745"/>
+  </g>
+
+  <!-- Comedy/Tragedy masks outline -->
+  <g stroke="#a78bfa" stroke-width="1" opacity="0.07" fill="none">
+    <!-- Comedy mask (simple) -->
+    <circle cx="680" cy="200" r="45"/>
+    <path d="M660,215 Q680,235 700,215"/>
+    <circle cx="668" cy="190" r="4"/>
+    <circle cx="692" cy="190" r="4"/>
+    <!-- Tragedy mask (simple) -->
+    <circle cx="760" cy="200" r="45"/>
+    <path d="M740,225 Q760,205 780,225"/>
+    <circle cx="748" cy="190" r="4"/>
+    <circle cx="772" cy="190" r="4"/>
+  </g>
+
+  <!-- Star of David / asterisk decorative -->
+  <g fill="#a78bfa" opacity="0.06" font-size="40" font-family="serif">
+    <text x="100" y="200">✦</text>
+    <text x="1300" y="700">✦</text>
+    <text x="700" y="850">✧</text>
+  </g>
+</svg>

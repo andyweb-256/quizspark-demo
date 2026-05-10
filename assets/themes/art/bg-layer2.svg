@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="orb1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c4b5fd" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#c4b5fd" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f472b6" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#f472b6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="none"/>
+
+  <!-- Open book — center left -->
+  <g transform="translate(320, 500)" opacity="0.08" stroke="#a78bfa" fill="none">
+    <!-- Left page -->
+    <path d="M0,0 Q-140,-10 -180,0 L-180,200 Q-140,190 0,200 Z" stroke-width="0.8"/>
+    <!-- Right page -->
+    <path d="M0,0 Q140,-10 180,0 L180,200 Q140,190 0,200 Z" stroke-width="0.8"/>
+    <!-- Spine -->
+    <line x1="0" y1="0" x2="0" y2="200" stroke-width="1.2"/>
+    <!-- Left page lines -->
+    <line x1="-160" y1="40"  x2="-20" y2="38"  stroke-width="0.4"/>
+    <line x1="-160" y1="60"  x2="-20" y2="58"  stroke-width="0.4"/>
+    <line x1="-160" y1="80"  x2="-20" y2="78"  stroke-width="0.4"/>
+    <line x1="-160" y1="100" x2="-20" y2="98"  stroke-width="0.4"/>
+    <line x1="-160" y1="120" x2="-20" y2="118" stroke-width="0.4"/>
+    <line x1="-160" y1="140" x2="-20" y2="138" stroke-width="0.4"/>
+    <line x1="-160" y1="160" x2="-20" y2="158" stroke-width="0.4"/>
+    <!-- Right page lines -->
+    <line x1="20"  y1="40"  x2="160" y2="38"  stroke-width="0.4"/>
+    <line x1="20"  y1="60"  x2="160" y2="58"  stroke-width="0.4"/>
+    <line x1="20"  y1="80"  x2="160" y2="78"  stroke-width="0.4"/>
+    <line x1="20"  y1="100" x2="160" y2="98"  stroke-width="0.4"/>
+    <line x1="20"  y1="120" x2="160" y2="118" stroke-width="0.4"/>
+    <line x1="20"  y1="140" x2="100" y2="138" stroke-width="0.4"/>
+    <!-- Drop cap suggestion -->
+    <rect x="-160" y="32" width="24" height="24" stroke-width="0.6"/>
+    <!-- Page number -->
+    <text x="-10" y="196" font-family="serif" font-size="9" text-anchor="middle" fill="#a78bfa" stroke="none" opacity="0.5">42</text>
+    <text x="10"  y="196" font-family="serif" font-size="9" text-anchor="middle" fill="#a78bfa" stroke="none" opacity="0.5">43</text>
+  </g>
+
+  <!-- Musical staff — top area -->
+  <g stroke="#c4b5fd" stroke-width="0.5" opacity="0.08" fill="none">
+    <!-- Staff lines -->
+    <line x1="700" y1="120" x2="1380" y2="120"/>
+    <line x1="700" y1="132" x2="1380" y2="132"/>
+    <line x1="700" y1="144" x2="1380" y2="144"/>
+    <line x1="700" y1="156" x2="1380" y2="156"/>
+    <line x1="700" y1="168" x2="1380" y2="168"/>
+    <!-- Treble clef suggestion -->
+    <path d="M720,170 Q715,140 725,120 Q735,100 730,130 Q725,155 740,150 Q755,145 750,130 Q745,115 730,120" stroke-width="1.2"/>
+    <!-- Notes -->
+    <ellipse cx="780" cy="138" rx="7" ry="5" fill="#c4b5fd" opacity="0.3" stroke="none"/>
+    <line x1="787" y1="138" x2="787" y2="108" stroke-width="0.8"/>
+    <ellipse cx="820" cy="150" rx="7" ry="5" fill="#c4b5fd" opacity="0.3" stroke="none"/>
+    <line x1="827" y1="150" x2="827" y2="120" stroke-width="0.8"/>
+    <ellipse cx="860" cy="132" rx="7" ry="5" fill="#c4b5fd" opacity="0.3" stroke="none"/>
+    <line x1="867" y1="132" x2="867" y2="102" stroke-width="0.8"/>
+    <ellipse cx="900" cy="144" rx="7" ry="5" fill="#c4b5fd" opacity="0.3" stroke="none"/>
+    <line x1="907" y1="144" x2="907" y2="114" stroke-width="0.8"/>
+    <ellipse cx="940" cy="126" rx="7" ry="5" fill="#c4b5fd" opacity="0.3" stroke="none"/>
+    <line x1="947" y1="126" x2="947" y2="96"  stroke-width="0.8"/>
+    <ellipse cx="980" cy="156" rx="7" ry="5" fill="#c4b5fd" opacity="0.3" stroke="none"/>
+    <line x1="987" y1="156" x2="987" y2="126" stroke-width="0.8"/>
+    <ellipse cx="1020" cy="138" rx="7" ry="5" fill="#c4b5fd" opacity="0.3" stroke="none"/>
+    <line x1="1027" y1="138" x2="1027" y2="108" stroke-width="0.8"/>
+  </g>
+
+  <!-- Ink brush paint strokes -->
+  <g fill="#a78bfa" opacity="0.07">
+    <path d="M900,400 Q980,370 1060,400 Q1100,415 1080,430 Q1000,460 920,430 Q880,415 900,400Z"/>
+    <path d="M1100,550 Q1180,520 1260,555 Q1290,568 1270,582 Q1190,610 1110,578 Q1075,565 1100,550Z"/>
+    <path d="M600,680 Q660,655 720,682 Q745,694 728,706 Q665,728 605,700 Q578,688 600,680Z"/>
+  </g>
+
+  <!-- Soft glow nodes -->
+  <ellipse cx="320"  cy="500" rx="100" ry="80"  fill="url(#orb1)" opacity="0.4"/>
+  <ellipse cx="1040" cy="144" rx="80"  ry="60"  fill="url(#orb2)" opacity="0.35"/>
+  <ellipse cx="1180" cy="565" rx="70"  ry="55"  fill="url(#orb3)" opacity="0.3"/>
+  <ellipse cx="660"  cy="690" rx="60"  ry="45"  fill="url(#orb1)" opacity="0.3"/>
+
+  <!-- Scattered ink drop dots -->
+  <g fill="#a78bfa">
+    <circle cx="480"  cy="200" r="1.5" opacity="0.38"/>
+    <circle cx="760"  cy="300" r="1"   opacity="0.32"/>
+    <circle cx="560"  cy="420" r="1.5" opacity="0.35"/>
+    <circle cx="1140" cy="380" r="1"   opacity="0.3"/>
+    <circle cx="840"  cy="600" r="1.5" opacity="0.33"/>
+    <circle cx="200"  cy="640" r="1"   opacity="0.3"/>
+    <circle cx="1300" cy="700" r="1.5" opacity="0.3"/>
+    <circle cx="420"  cy="780" r="1"   opacity="0.28"/>
+  </g>
+  <g fill="#f472b6">
+    <circle cx="640"  cy="260" r="1.5" opacity="0.32"/>
+    <circle cx="1060" cy="480" r="1"   opacity="0.28"/>
+    <circle cx="300"  cy="720" r="1.5" opacity="0.3"/>
+    <circle cx="1260" cy="200" r="1"   opacity="0.28"/>
+  </g>
+</svg>
