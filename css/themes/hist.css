@@ -1,0 +1,110 @@
+/* ============================================================
+   QuizSpark — css/themes/hist.css
+   History niche theme overrides.
+   ============================================================ */
+
+[data-theme="hist"] {
+  --accent      : #fb923c;
+  --accent-glow : rgba(251,146,60,0.22);
+  --accent-dim  : rgba(251,146,60,0.09);
+  --accent-rgb  : 251,146,60;
+
+  --bg-0 : #120a02;
+  --bg-1 : #1c1004;
+  --bg-2 : #261608;
+  --bg-3 : #321e0e;
+
+  --text-1 : #f5e8d8;
+  --text-2 : #c8a880;
+  --text-3 : #7a5c38;
+
+  --border       : rgba(251,146,60,0.09);
+  --border-hover : rgba(251,146,60,0.22);
+
+  --niche-color : #fb923c;
+}
+
+[data-theme="hist"] .theme-bg__layer--1 {
+  background-image: url('../assets/themes/hist/bg-layer1.svg');
+  opacity: 1;
+}
+
+[data-theme="hist"] .theme-bg__layer--2 {
+  background-image: url('../assets/themes/hist/bg-layer2.svg');
+  opacity: 0.5;
+}
+
+[data-theme="hist"] .theme-bg__layer--3 {
+  background-image: url('../assets/themes/hist/bg-layer3.svg');
+  opacity: 0.3;
+}
+
+[data-theme="hist"] .nav {
+  background: rgba(18,10,2,0.78);
+  border-bottom-color: rgba(251,146,60,0.1);
+}
+
+[data-theme="hist"] .nav__logo span { color: #fb923c; }
+
+[data-theme="hist"] .question-card {
+  background  : rgba(28,16,4,0.72);
+  border-color: rgba(251,146,60,0.12);
+}
+
+[data-theme="hist"] .option-btn {
+  background  : rgba(38,22,8,0.82);
+  border-color: rgba(251,146,60,0.1);
+}
+
+[data-theme="hist"] .option-btn:hover:not(:disabled) {
+  background  : rgba(251,146,60,0.08);
+  border-color: #fb923c;
+  box-shadow  : 0 0 16px rgba(251,146,60,0.12);
+}
+
+[data-theme="hist"] .progress-bar__fill {
+  background: linear-gradient(90deg, #fb923c, #fbbf24);
+  box-shadow : 0 0 10px rgba(251,146,60,0.4);
+}
+
+[data-theme="hist"] .timer-ring__fill {
+  stroke: #fb923c;
+  filter: drop-shadow(0 0 4px rgba(251,146,60,0.6));
+}
+
+[data-theme="hist"] .splash {
+  background: radial-gradient(ellipse at 40% 50%, #1c1004 0%, #120a02 100%);
+}
+
+[data-theme="hist"] .splash__title { color: #fb923c; }
+
+[data-theme="hist"] .subniche-chip {
+  background  : rgba(28,16,4,0.8);
+  border-color: rgba(251,146,60,0.12);
+  color       : #7a5c38;
+}
+
+[data-theme="hist"] .subniche-chip:hover,
+[data-theme="hist"] .subniche-chip.active {
+  border-color: #fb923c;
+  color       : #fb923c;
+  background  : rgba(251,146,60,0.08);
+  box-shadow  : 0 0 10px rgba(251,146,60,0.15);
+}
+
+[data-theme="hist"] .fun-fact {
+  border-left-color: #fb923c;
+  background       : rgba(251,146,60,0.05);
+}
+
+[data-theme="hist"] .score-circle__fill {
+  stroke: #fb923c;
+  filter: drop-shadow(0 0 8px rgba(251,146,60,0.5));
+}
+
+[data-theme="hist"] footer {
+  border-top-color: rgba(251,146,60,0.08);
+}
+
+/* data-particle-preset="hist" triggers: dust motes,
+   warm amber/sepia tones, gentle float, sparse density    */

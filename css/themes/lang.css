@@ -1,0 +1,111 @@
+/* ============================================================
+   QuizSpark — css/themes/lang.css
+   Language & Words niche theme overrides.
+   ============================================================ */
+
+[data-theme="lang"] {
+  --accent      : #94a3b8;
+  --accent-glow : rgba(148,163,184,0.2);
+  --accent-dim  : rgba(148,163,184,0.08);
+  --accent-rgb  : 148,163,184;
+
+  --bg-0 : #0b0b12;
+  --bg-1 : #111118;
+  --bg-2 : #181824;
+  --bg-3 : #202030;
+
+  --text-1 : #f0f0f8;
+  --text-2 : #a0a0c0;
+  --text-3 : #505070;
+
+  --border       : rgba(148,163,184,0.08);
+  --border-hover : rgba(148,163,184,0.18);
+
+  --niche-color : #94a3b8;
+}
+
+[data-theme="lang"] .theme-bg__layer--1 {
+  background-image: url('../assets/themes/lang/bg-layer1.svg');
+  opacity: 1;
+}
+
+[data-theme="lang"] .theme-bg__layer--2 {
+  background-image: url('../assets/themes/lang/bg-layer2.svg');
+  opacity: 0.5;
+}
+
+[data-theme="lang"] .theme-bg__layer--3 {
+  background-image: url('../assets/themes/lang/bg-layer3.svg');
+  opacity: 0.3;
+}
+
+[data-theme="lang"] .nav {
+  background: rgba(11,11,18,0.82);
+  border-bottom-color: rgba(148,163,184,0.1);
+}
+
+[data-theme="lang"] .nav__logo span { color: #94a3b8; }
+
+[data-theme="lang"] .question-card {
+  background  : rgba(17,17,24,0.75);
+  border-color: rgba(148,163,184,0.1);
+}
+
+/* Lang uses a slightly warmer option button to avoid being too cold */
+[data-theme="lang"] .option-btn {
+  background  : rgba(24,24,36,0.85);
+  border-color: rgba(148,163,184,0.08);
+}
+
+[data-theme="lang"] .option-btn:hover:not(:disabled) {
+  background  : rgba(148,163,184,0.07);
+  border-color: #94a3b8;
+  box-shadow  : 0 0 14px rgba(148,163,184,0.1);
+}
+
+[data-theme="lang"] .progress-bar__fill {
+  background: linear-gradient(90deg, #94a3b8, #60b8ff);
+  box-shadow : 0 0 10px rgba(148,163,184,0.3);
+}
+
+[data-theme="lang"] .timer-ring__fill {
+  stroke: #94a3b8;
+  filter: drop-shadow(0 0 4px rgba(148,163,184,0.5));
+}
+
+[data-theme="lang"] .splash {
+  background: radial-gradient(ellipse at 50% 40%, #111118 0%, #0b0b12 100%);
+}
+
+[data-theme="lang"] .splash__title { color: #94a3b8; }
+
+[data-theme="lang"] .subniche-chip {
+  background  : rgba(17,17,24,0.8);
+  border-color: rgba(148,163,184,0.1);
+  color       : #505070;
+}
+
+[data-theme="lang"] .subniche-chip:hover,
+[data-theme="lang"] .subniche-chip.active {
+  border-color: #94a3b8;
+  color       : #94a3b8;
+  background  : rgba(148,163,184,0.07);
+  box-shadow  : 0 0 8px rgba(148,163,184,0.12);
+}
+
+[data-theme="lang"] .fun-fact {
+  border-left-color: #94a3b8;
+  background       : rgba(148,163,184,0.04);
+}
+
+[data-theme="lang"] .score-circle__fill {
+  stroke: #94a3b8;
+  filter: drop-shadow(0 0 8px rgba(148,163,184,0.4));
+}
+
+[data-theme="lang"] footer {
+  border-top-color: rgba(148,163,184,0.07);
+}
+
+/* data-particle-preset="lang" triggers: floating letter fragments,
+   silver/white, slow typewriter-like drift, low density           */

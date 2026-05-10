@@ -1,0 +1,110 @@
+/* ============================================================
+   QuizSpark — css/themes/geo.css
+   Geography niche theme overrides.
+   ============================================================ */
+
+[data-theme="geo"] {
+  --accent      : #34d399;
+  --accent-glow : rgba(52,211,153,0.22);
+  --accent-dim  : rgba(52,211,153,0.09);
+  --accent-rgb  : 52,211,153;
+
+  --bg-0 : #011208;
+  --bg-1 : #031a0e;
+  --bg-2 : #072416;
+  --bg-3 : #0d3020;
+
+  --text-1 : #e0f5ec;
+  --text-2 : #80c4a4;
+  --text-3 : #3a6e54;
+
+  --border       : rgba(52,211,153,0.09);
+  --border-hover : rgba(52,211,153,0.22);
+
+  --niche-color : #34d399;
+}
+
+[data-theme="geo"] .theme-bg__layer--1 {
+  background-image: url('../assets/themes/geo/bg-layer1.svg');
+  opacity: 1;
+}
+
+[data-theme="geo"] .theme-bg__layer--2 {
+  background-image: url('../assets/themes/geo/bg-layer2.svg');
+  opacity: 0.5;
+}
+
+[data-theme="geo"] .theme-bg__layer--3 {
+  background-image: url('../assets/themes/geo/bg-layer3.svg');
+  opacity: 0.3;
+}
+
+[data-theme="geo"] .nav {
+  background: rgba(1,18,8,0.78);
+  border-bottom-color: rgba(52,211,153,0.1);
+}
+
+[data-theme="geo"] .nav__logo span { color: #34d399; }
+
+[data-theme="geo"] .question-card {
+  background  : rgba(3,26,14,0.72);
+  border-color: rgba(52,211,153,0.12);
+}
+
+[data-theme="geo"] .option-btn {
+  background  : rgba(7,36,22,0.82);
+  border-color: rgba(52,211,153,0.1);
+}
+
+[data-theme="geo"] .option-btn:hover:not(:disabled) {
+  background  : rgba(52,211,153,0.08);
+  border-color: #34d399;
+  box-shadow  : 0 0 16px rgba(52,211,153,0.12);
+}
+
+[data-theme="geo"] .progress-bar__fill {
+  background: linear-gradient(90deg, #34d399, #60b8ff);
+  box-shadow : 0 0 10px rgba(52,211,153,0.4);
+}
+
+[data-theme="geo"] .timer-ring__fill {
+  stroke: #34d399;
+  filter: drop-shadow(0 0 4px rgba(52,211,153,0.6));
+}
+
+[data-theme="geo"] .splash {
+  background: radial-gradient(ellipse at 40% 50%, #031a0e 0%, #011208 100%);
+}
+
+[data-theme="geo"] .splash__title { color: #34d399; }
+
+[data-theme="geo"] .subniche-chip {
+  background  : rgba(3,26,14,0.8);
+  border-color: rgba(52,211,153,0.12);
+  color       : #3a6e54;
+}
+
+[data-theme="geo"] .subniche-chip:hover,
+[data-theme="geo"] .subniche-chip.active {
+  border-color: #34d399;
+  color       : #34d399;
+  background  : rgba(52,211,153,0.08);
+  box-shadow  : 0 0 10px rgba(52,211,153,0.15);
+}
+
+[data-theme="geo"] .fun-fact {
+  border-left-color: #34d399;
+  background       : rgba(52,211,153,0.05);
+}
+
+[data-theme="geo"] .score-circle__fill {
+  stroke: #34d399;
+  filter: drop-shadow(0 0 8px rgba(52,211,153,0.5));
+}
+
+[data-theme="geo"] footer {
+  border-top-color: rgba(52,211,153,0.08);
+}
+
+/* data-particle-preset="geo" triggers: drifting cloud wisps,
+   soft green/teal dots, slow horizontal drift, medium density */

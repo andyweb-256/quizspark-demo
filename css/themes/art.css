@@ -1,0 +1,110 @@
+/* ============================================================
+   QuizSpark — css/themes/art.css
+   Arts & Literature niche theme overrides.
+   ============================================================ */
+
+[data-theme="art"] {
+  --accent      : #a78bfa;
+  --accent-glow : rgba(167,139,250,0.22);
+  --accent-dim  : rgba(167,139,250,0.09);
+  --accent-rgb  : 167,139,250;
+
+  --bg-0 : #0e0614;
+  --bg-1 : #160a1e;
+  --bg-2 : #1e1028;
+  --bg-3 : #281636;
+
+  --text-1 : #f0e8ff;
+  --text-2 : #b89cd8;
+  --text-3 : #6a4a88;
+
+  --border       : rgba(167,139,250,0.09);
+  --border-hover : rgba(167,139,250,0.22);
+
+  --niche-color : #a78bfa;
+}
+
+[data-theme="art"] .theme-bg__layer--1 {
+  background-image: url('../assets/themes/art/bg-layer1.svg');
+  opacity: 1;
+}
+
+[data-theme="art"] .theme-bg__layer--2 {
+  background-image: url('../assets/themes/art/bg-layer2.svg');
+  opacity: 0.5;
+}
+
+[data-theme="art"] .theme-bg__layer--3 {
+  background-image: url('../assets/themes/art/bg-layer3.svg');
+  opacity: 0.3;
+}
+
+[data-theme="art"] .nav {
+  background: rgba(14,6,20,0.78);
+  border-bottom-color: rgba(167,139,250,0.1);
+}
+
+[data-theme="art"] .nav__logo span { color: #a78bfa; }
+
+[data-theme="art"] .question-card {
+  background  : rgba(22,10,30,0.72);
+  border-color: rgba(167,139,250,0.12);
+}
+
+[data-theme="art"] .option-btn {
+  background  : rgba(30,16,40,0.82);
+  border-color: rgba(167,139,250,0.1);
+}
+
+[data-theme="art"] .option-btn:hover:not(:disabled) {
+  background  : rgba(167,139,250,0.08);
+  border-color: #a78bfa;
+  box-shadow  : 0 0 16px rgba(167,139,250,0.12);
+}
+
+[data-theme="art"] .progress-bar__fill {
+  background: linear-gradient(90deg, #a78bfa, #f472b6);
+  box-shadow : 0 0 10px rgba(167,139,250,0.4);
+}
+
+[data-theme="art"] .timer-ring__fill {
+  stroke: #a78bfa;
+  filter: drop-shadow(0 0 4px rgba(167,139,250,0.6));
+}
+
+[data-theme="art"] .splash {
+  background: radial-gradient(ellipse at 40% 40%, #160a1e 0%, #0e0614 100%);
+}
+
+[data-theme="art"] .splash__title { color: #a78bfa; }
+
+[data-theme="art"] .subniche-chip {
+  background  : rgba(22,10,30,0.8);
+  border-color: rgba(167,139,250,0.12);
+  color       : #6a4a88;
+}
+
+[data-theme="art"] .subniche-chip:hover,
+[data-theme="art"] .subniche-chip.active {
+  border-color: #a78bfa;
+  color       : #a78bfa;
+  background  : rgba(167,139,250,0.08);
+  box-shadow  : 0 0 10px rgba(167,139,250,0.15);
+}
+
+[data-theme="art"] .fun-fact {
+  border-left-color: #a78bfa;
+  background       : rgba(167,139,250,0.05);
+}
+
+[data-theme="art"] .score-circle__fill {
+  stroke: #a78bfa;
+  filter: drop-shadow(0 0 8px rgba(167,139,250,0.5));
+}
+
+[data-theme="art"] footer {
+  border-top-color: rgba(167,139,250,0.08);
+}
+
+/* data-particle-preset="art" triggers: ink drop wisps,
+   lavender/rose, slow swirl, low-medium density           */

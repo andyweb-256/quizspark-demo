@@ -1,0 +1,110 @@
+/* ============================================================
+   QuizSpark — css/themes/spo.css
+   Sports niche theme overrides.
+   ============================================================ */
+
+[data-theme="spo"] {
+  --accent      : #378ADD;
+  --accent-glow : rgba(55,138,221,0.22);
+  --accent-dim  : rgba(55,138,221,0.09);
+  --accent-rgb  : 55,138,221;
+
+  --bg-0 : #020812;
+  --bg-1 : #04101e;
+  --bg-2 : #081828;
+  --bg-3 : #0e2236;
+
+  --text-1 : #e4f0ff;
+  --text-2 : #7aaad8;
+  --text-3 : #3a5e80;
+
+  --border       : rgba(55,138,221,0.09);
+  --border-hover : rgba(55,138,221,0.22);
+
+  --niche-color : #378ADD;
+}
+
+[data-theme="spo"] .theme-bg__layer--1 {
+  background-image: url('../assets/themes/spo/bg-layer1.svg');
+  opacity: 1;
+}
+
+[data-theme="spo"] .theme-bg__layer--2 {
+  background-image: url('../assets/themes/spo/bg-layer2.svg');
+  opacity: 0.5;
+}
+
+[data-theme="spo"] .theme-bg__layer--3 {
+  background-image: url('../assets/themes/spo/bg-layer3.svg');
+  opacity: 0.3;
+}
+
+[data-theme="spo"] .nav {
+  background: rgba(2,8,18,0.78);
+  border-bottom-color: rgba(55,138,221,0.1);
+}
+
+[data-theme="spo"] .nav__logo span { color: #378ADD; }
+
+[data-theme="spo"] .question-card {
+  background  : rgba(4,16,30,0.72);
+  border-color: rgba(55,138,221,0.12);
+}
+
+[data-theme="spo"] .option-btn {
+  background  : rgba(8,24,40,0.82);
+  border-color: rgba(55,138,221,0.1);
+}
+
+[data-theme="spo"] .option-btn:hover:not(:disabled) {
+  background  : rgba(55,138,221,0.08);
+  border-color: #378ADD;
+  box-shadow  : 0 0 16px rgba(55,138,221,0.14);
+}
+
+[data-theme="spo"] .progress-bar__fill {
+  background: linear-gradient(90deg, #378ADD, #34d399);
+  box-shadow : 0 0 10px rgba(55,138,221,0.4);
+}
+
+[data-theme="spo"] .timer-ring__fill {
+  stroke: #378ADD;
+  filter: drop-shadow(0 0 4px rgba(55,138,221,0.6));
+}
+
+[data-theme="spo"] .splash {
+  background: radial-gradient(ellipse at 50% 60%, #04101e 0%, #020812 100%);
+}
+
+[data-theme="spo"] .splash__title { color: #378ADD; }
+
+[data-theme="spo"] .subniche-chip {
+  background  : rgba(4,16,30,0.8);
+  border-color: rgba(55,138,221,0.12);
+  color       : #3a5e80;
+}
+
+[data-theme="spo"] .subniche-chip:hover,
+[data-theme="spo"] .subniche-chip.active {
+  border-color: #378ADD;
+  color       : #378ADD;
+  background  : rgba(55,138,221,0.08);
+  box-shadow  : 0 0 10px rgba(55,138,221,0.15);
+}
+
+[data-theme="spo"] .fun-fact {
+  border-left-color: #378ADD;
+  background       : rgba(55,138,221,0.05);
+}
+
+[data-theme="spo"] .score-circle__fill {
+  stroke: #378ADD;
+  filter: drop-shadow(0 0 8px rgba(55,138,221,0.5));
+}
+
+[data-theme="spo"] footer {
+  border-top-color: rgba(55,138,221,0.08);
+}
+
+/* data-particle-preset="spo" triggers: speed streaks / light trails,
+   blue/white, fast horizontal motion, medium-high density           */

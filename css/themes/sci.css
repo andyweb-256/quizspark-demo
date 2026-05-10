@@ -1,0 +1,133 @@
+/* ============================================================
+   QuizSpark — css/themes/sci.css
+   Science & Technology niche theme overrides.
+   Loaded dynamically by js/themes.js when sci is selected.
+   ============================================================ */
+
+[data-theme="sci"] {
+  /* Accent — electric blue */
+  --accent      : #60b8ff;
+  --accent-glow : rgba(96,184,255,0.22);
+  --accent-dim  : rgba(96,184,255,0.09);
+  --accent-rgb  : 96,184,255;
+
+  /* Background surfaces — deep space navy */
+  --bg-0 : #020818;
+  --bg-1 : #040e22;
+  --bg-2 : #0a1830;
+  --bg-3 : #102040;
+
+  /* Text */
+  --text-1 : #e8f4ff;
+  --text-2 : #9ab8d8;
+  --text-3 : #4a6880;
+
+  /* Borders */
+  --border       : rgba(96,184,255,0.09);
+  --border-hover : rgba(96,184,255,0.22);
+
+  /* Niche card color token (used by .niche-card[data-niche="sci"]) */
+  --niche-color : #60b8ff;
+}
+
+/* ── Background layers ────────────────────────────────────── */
+[data-theme="sci"] .theme-bg__layer--1 {
+  background-image: url('../assets/themes/sci/bg-layer1.svg');
+  opacity: 1;
+}
+
+[data-theme="sci"] .theme-bg__layer--2 {
+  background-image: url('../assets/themes/sci/bg-layer2.svg');
+  opacity: 0.5;
+}
+
+[data-theme="sci"] .theme-bg__layer--3 {
+  background-image: url('../assets/themes/sci/bg-layer3.svg');
+  opacity: 0.3;
+}
+
+/* ── Nav accent ───────────────────────────────────────────── */
+[data-theme="sci"] .nav {
+  background: rgba(2,8,24,0.75);
+  border-bottom-color: rgba(96,184,255,0.1);
+}
+
+[data-theme="sci"] .nav__logo span { color: #60b8ff; }
+
+/* ── Question card ────────────────────────────────────────── */
+[data-theme="sci"] .question-card {
+  background  : rgba(4,14,34,0.7);
+  border-color: rgba(96,184,255,0.12);
+}
+
+/* ── Option buttons ───────────────────────────────────────── */
+[data-theme="sci"] .option-btn {
+  background  : rgba(10,24,48,0.8);
+  border-color: rgba(96,184,255,0.1);
+}
+
+[data-theme="sci"] .option-btn:hover:not(:disabled) {
+  background  : rgba(96,184,255,0.08);
+  border-color: #60b8ff;
+  box-shadow  : 0 0 16px rgba(96,184,255,0.12);
+}
+
+/* ── Progress bar ─────────────────────────────────────────── */
+[data-theme="sci"] .progress-bar__fill {
+  background: linear-gradient(90deg, #60b8ff, #a78bfa);
+  box-shadow : 0 0 10px rgba(96,184,255,0.4);
+}
+
+/* ── Timer ring ───────────────────────────────────────────── */
+[data-theme="sci"] .timer-ring__fill {
+  stroke: #60b8ff;
+  filter: drop-shadow(0 0 4px rgba(96,184,255,0.6));
+}
+
+/* ── Splash screen ────────────────────────────────────────── */
+[data-theme="sci"] .splash {
+  background: radial-gradient(ellipse at 30% 40%, #040e22 0%, #020818 100%);
+}
+
+[data-theme="sci"] .splash__title { color: #60b8ff; }
+
+/* ── Sub-niche chips ──────────────────────────────────────── */
+[data-theme="sci"] .subniche-chip {
+  background  : rgba(4,14,34,0.8);
+  border-color: rgba(96,184,255,0.12);
+  color       : #4a6880;
+}
+
+[data-theme="sci"] .subniche-chip:hover,
+[data-theme="sci"] .subniche-chip.active {
+  border-color: #60b8ff;
+  color       : #60b8ff;
+  background  : rgba(96,184,255,0.08);
+  box-shadow  : 0 0 10px rgba(96,184,255,0.15);
+}
+
+/* ── Fun fact ─────────────────────────────────────────────── */
+[data-theme="sci"] .fun-fact {
+  border-left-color: #60b8ff;
+  background       : rgba(96,184,255,0.05);
+}
+
+/* ── Score circle ─────────────────────────────────────────── */
+[data-theme="sci"] .score-circle__fill {
+  stroke: #60b8ff;
+  filter: drop-shadow(0 0 8px rgba(96,184,255,0.5));
+}
+
+/* ── Diff cards active glow ───────────────────────────────── */
+[data-theme="sci"] .diff-card.active {
+  box-shadow: 0 0 0 1px var(--diff-color), 0 0 16px rgba(96,184,255,0.1);
+}
+
+/* ── Footer / misc borders ────────────────────────────────── */
+[data-theme="sci"] footer {
+  border-top-color: rgba(96,184,255,0.08);
+}
+
+/* ── Particle config hint (read by js/particles.js) ──────── */
+/* data-particle-preset="sci" triggers: floating atoms,
+   soft blue/purple dots, slow drift, low density           */

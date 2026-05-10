@@ -1,0 +1,110 @@
+/* ============================================================
+   QuizSpark — css/themes/nat.css
+   Food & Nature niche theme overrides.
+   ============================================================ */
+
+[data-theme="nat"] {
+  --accent      : #f97316;
+  --accent-glow : rgba(249,115,22,0.22);
+  --accent-dim  : rgba(249,115,22,0.09);
+  --accent-rgb  : 249,115,22;
+
+  --bg-0 : #020e04;
+  --bg-1 : #041608;
+  --bg-2 : #082010;
+  --bg-3 : #0e2c18;
+
+  --text-1 : #eef8e8;
+  --text-2 : #90c878;
+  --text-3 : #3e6c30;
+
+  --border       : rgba(249,115,22,0.09);
+  --border-hover : rgba(249,115,22,0.22);
+
+  --niche-color : #f97316;
+}
+
+[data-theme="nat"] .theme-bg__layer--1 {
+  background-image: url('../assets/themes/nat/bg-layer1.svg');
+  opacity: 1;
+}
+
+[data-theme="nat"] .theme-bg__layer--2 {
+  background-image: url('../assets/themes/nat/bg-layer2.svg');
+  opacity: 0.5;
+}
+
+[data-theme="nat"] .theme-bg__layer--3 {
+  background-image: url('../assets/themes/nat/bg-layer3.svg');
+  opacity: 0.3;
+}
+
+[data-theme="nat"] .nav {
+  background: rgba(2,14,4,0.78);
+  border-bottom-color: rgba(249,115,22,0.1);
+}
+
+[data-theme="nat"] .nav__logo span { color: #f97316; }
+
+[data-theme="nat"] .question-card {
+  background  : rgba(4,22,8,0.72);
+  border-color: rgba(249,115,22,0.12);
+}
+
+[data-theme="nat"] .option-btn {
+  background  : rgba(8,32,16,0.82);
+  border-color: rgba(249,115,22,0.1);
+}
+
+[data-theme="nat"] .option-btn:hover:not(:disabled) {
+  background  : rgba(249,115,22,0.08);
+  border-color: #f97316;
+  box-shadow  : 0 0 16px rgba(249,115,22,0.14);
+}
+
+[data-theme="nat"] .progress-bar__fill {
+  background: linear-gradient(90deg, #f97316, #34d399);
+  box-shadow : 0 0 10px rgba(249,115,22,0.4);
+}
+
+[data-theme="nat"] .timer-ring__fill {
+  stroke: #f97316;
+  filter: drop-shadow(0 0 4px rgba(249,115,22,0.6));
+}
+
+[data-theme="nat"] .splash {
+  background: radial-gradient(ellipse at 40% 60%, #041608 0%, #020e04 100%);
+}
+
+[data-theme="nat"] .splash__title { color: #f97316; }
+
+[data-theme="nat"] .subniche-chip {
+  background  : rgba(4,22,8,0.8);
+  border-color: rgba(249,115,22,0.12);
+  color       : #3e6c30;
+}
+
+[data-theme="nat"] .subniche-chip:hover,
+[data-theme="nat"] .subniche-chip.active {
+  border-color: #f97316;
+  color       : #f97316;
+  background  : rgba(249,115,22,0.08);
+  box-shadow  : 0 0 10px rgba(249,115,22,0.15);
+}
+
+[data-theme="nat"] .fun-fact {
+  border-left-color: #f97316;
+  background       : rgba(249,115,22,0.05);
+}
+
+[data-theme="nat"] .score-circle__fill {
+  stroke: #f97316;
+  filter: drop-shadow(0 0 8px rgba(249,115,22,0.5));
+}
+
+[data-theme="nat"] footer {
+  border-top-color: rgba(249,115,22,0.08);
+}
+
+/* data-particle-preset="nat" triggers: floating pollen/spores,
+   green + orange glow dots, gentle upward drift, medium density */
