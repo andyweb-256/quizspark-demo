@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="orb1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f472b6" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#f472b6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#fbbf24" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="none"/>
+
+  <!-- Vinyl record — left mid -->
+  <g transform="translate(260, 500)" opacity="0.09" fill="none" stroke="#f472b6">
+    <circle r="160" stroke-width="1"/>
+    <circle r="148" stroke-width="0.4"/>
+    <circle r="136" stroke-width="0.4"/>
+    <circle r="124" stroke-width="0.4"/>
+    <circle r="112" stroke-width="0.4"/>
+    <circle r="100" stroke-width="0.4"/>
+    <circle r="88"  stroke-width="0.4"/>
+    <circle r="76"  stroke-width="0.4"/>
+    <circle r="64"  stroke-width="0.4"/>
+    <circle r="52"  stroke-width="0.6"/>
+    <circle r="40"  stroke-width="0.6"/>
+    <circle r="28"  stroke-width="0.8"/>
+    <circle r="16"  stroke-width="1" fill="#f472b6" opacity="0.1"/>
+    <circle r="5"   fill="#f472b6" opacity="0.3" stroke="none"/>
+  </g>
+
+  <!-- Smaller vinyl record — top right -->
+  <g transform="translate(1260, 200)" opacity="0.07" fill="none" stroke="#a78bfa">
+    <circle r="100" stroke-width="1"/>
+    <circle r="90"  stroke-width="0.4"/>
+    <circle r="78"  stroke-width="0.4"/>
+    <circle r="66"  stroke-width="0.4"/>
+    <circle r="54"  stroke-width="0.4"/>
+    <circle r="42"  stroke-width="0.5"/>
+    <circle r="30"  stroke-width="0.7"/>
+    <circle r="18"  stroke-width="1" fill="#a78bfa" opacity="0.1"/>
+    <circle r="4"   fill="#a78bfa" opacity="0.3" stroke="none"/>
+  </g>
+
+  <!-- Scattered like/heart symbols -->
+  <g font-family="sans-serif" fill="#f472b6" opacity="0.1">
+    <text x="520"  y="180" font-size="18">♥</text>
+    <text x="840"  y="320" font-size="14">♥</text>
+    <text x="1080" y="600" font-size="20">♥</text>
+    <text x="320"  y="740" font-size="16">♥</text>
+    <text x="680"  y="820" font-size="12">♥</text>
+    <text x="1340" y="440" font-size="18">♥</text>
+    <text x="160"  y="320" font-size="14">♥</text>
+  </g>
+
+  <!-- Star rating symbols -->
+  <g font-family="sans-serif" fill="#fbbf24" opacity="0.08">
+    <text x="440"  y="400" font-size="14">★★★★★</text>
+    <text x="900"  y="700" font-size="12">★★★★</text>
+    <text x="100"  y="600" font-size="10">★★★</text>
+    <text x="1100" y="200" font-size="14">★★★★★</text>
+  </g>
+
+  <!-- Notification bell / play button shapes -->
+  <g stroke="#a78bfa" stroke-width="0.8" fill="none" opacity="0.1">
+    <!-- Play button triangle -->
+    <polygon points="700,380 700,440 750,410" fill="#a78bfa" opacity="0.12" stroke-width="0.6"/>
+    <circle cx="725" cy="410" r="38" stroke-width="0.8"/>
+    <!-- Another play button -->
+    <polygon points="1160,640 1160,690 1200,665" fill="#f472b6" opacity="0.1" stroke="#f472b6" stroke-width="0.6"/>
+    <circle cx="1180" cy="665" r="32" stroke="#f472b6" stroke-width="0.8"/>
+  </g>
+
+  <!-- Soft glow nodes -->
+  <ellipse cx="260"  cy="500" rx="90"  ry="90"  fill="url(#orb1)" opacity="0.5"/>
+  <ellipse cx="1260" cy="200" rx="70"  ry="70"  fill="url(#orb2)" opacity="0.45"/>
+  <ellipse cx="725"  cy="410" rx="55"  ry="55"  fill="url(#orb2)" opacity="0.3"/>
+  <ellipse cx="900"  cy="750" rx="65"  ry="65"  fill="url(#orb3)" opacity="0.35"/>
+
+  <!-- Scattered neon dots -->
+  <g fill="#f472b6">
+    <circle cx="400"  cy="140" r="1.5" opacity="0.4"/>
+    <circle cx="780"  cy="240" r="1"   opacity="0.35"/>
+    <circle cx="1020" cy="380" r="1.5" opacity="0.4"/>
+    <circle cx="580"  cy="560" r="1"   opacity="0.35"/>
+    <circle cx="1280" cy="700" r="1.5" opacity="0.38"/>
+    <circle cx="200"  cy="820" r="1"   opacity="0.32"/>
+    <circle cx="860"  cy="860" r="1.5" opacity="0.35"/>
+  </g>
+  <g fill="#a78bfa">
+    <circle cx="620"  cy="300" r="1.5" opacity="0.38"/>
+    <circle cx="1140" cy="460" r="1"   opacity="0.35"/>
+    <circle cx="360"  cy="660" r="1.5" opacity="0.35"/>
+    <circle cx="1060" cy="820" r="1"   opacity="0.3"/>
+  </g>
+</svg>

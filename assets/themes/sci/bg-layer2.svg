@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="node1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#60b8ff" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#60b8ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="node2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="node3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="none"/>
+
+  <!-- Circuit board trace network -->
+  <g stroke="#60b8ff" stroke-width="0.6" opacity="0.12" fill="none">
+    <path d="M0,180 L320,180 L340,160 L600,160"/>
+    <path d="M0,340 L200,340 L220,320 L500,320 L520,340 L800,340"/>
+    <path d="M640,180 L700,180 L720,200 L900,200 L920,180 L1100,180"/>
+    <path d="M0,520 L150,520 L170,500 L400,500"/>
+    <path d="M850,340 L1050,340 L1070,360 L1300,360 L1440,360"/>
+    <path d="M1100,180 L1200,180 L1220,200 L1440,200"/>
+    <path d="M400,500 L550,500 L570,520 L800,520 L820,500 L1100,500"/>
+    <path d="M0,680 L250,680 L270,660 L550,660 L570,680 L900,680"/>
+    <path d="M1100,500 L1250,500 L1270,520 L1440,520"/>
+    <path d="M900,680 L1100,680 L1120,700 L1440,700"/>
+    <path d="M320,0 L320,180"/>
+    <path d="M600,160 L600,0"/>
+    <path d="M200,340 L200,500"/>
+    <path d="M800,340 L800,520"/>
+    <path d="M1100,180 L1100,500"/>
+    <path d="M400,500 L400,680"/>
+    <path d="M900,680 L900,900"/>
+    <path d="M550,660 L550,900"/>
+    <circle cx="320" cy="180" r="3" fill="#60b8ff" opacity="0.5"/>
+    <circle cx="600" cy="160" r="3" fill="#60b8ff" opacity="0.5"/>
+    <circle cx="200" cy="340" r="3" fill="#60b8ff" opacity="0.5"/>
+    <circle cx="800" cy="340" r="3" fill="#60b8ff" opacity="0.5"/>
+    <circle cx="1100" cy="180" r="3" fill="#60b8ff" opacity="0.5"/>
+    <circle cx="400" cy="500" r="3" fill="#60b8ff" opacity="0.5"/>
+    <circle cx="1100" cy="500" r="3" fill="#60b8ff" opacity="0.5"/>
+    <circle cx="900" cy="680" r="3" fill="#60b8ff" opacity="0.5"/>
+    <circle cx="550" cy="660" r="3" fill="#60b8ff" opacity="0.5"/>
+  </g>
+
+  <!-- Floating particle glow nodes -->
+  <ellipse cx="220" cy="150" rx="60" ry="60" fill="url(#node1)" opacity="0.6"/>
+  <ellipse cx="780" cy="420" rx="80" ry="80" fill="url(#node2)" opacity="0.5"/>
+  <ellipse cx="1180" cy="260" rx="55" ry="55" fill="url(#node3)" opacity="0.5"/>
+  <ellipse cx="450" cy="700" rx="65" ry="65" fill="url(#node1)" opacity="0.4"/>
+  <ellipse cx="1050" cy="620" rx="50" ry="50" fill="url(#node2)" opacity="0.4"/>
+
+  <!-- Small bright dots -->
+  <g fill="#60b8ff">
+    <circle cx="140"  cy="280" r="2"   opacity="0.5"/>
+    <circle cx="380"  cy="140" r="1.5" opacity="0.4"/>
+    <circle cx="620"  cy="380" r="2.5" opacity="0.55"/>
+    <circle cx="860"  cy="240" r="2"   opacity="0.45"/>
+    <circle cx="1020" cy="440" r="2"   opacity="0.5"/>
+    <circle cx="1260" cy="580" r="1.5" opacity="0.4"/>
+    <circle cx="300"  cy="580" r="2"   opacity="0.45"/>
+    <circle cx="700"  cy="720" r="2.5" opacity="0.5"/>
+    <circle cx="1160" cy="780" r="2"   opacity="0.4"/>
+  </g>
+  <g fill="#a78bfa">
+    <circle cx="460"  cy="200" r="2"   opacity="0.45"/>
+    <circle cx="920"  cy="560" r="2.5" opacity="0.5"/>
+    <circle cx="1320" cy="340" r="2"   opacity="0.4"/>
+    <circle cx="200"  cy="760" r="1.5" opacity="0.4"/>
+    <circle cx="680"  cy="480" r="2"   opacity="0.45"/>
+  </g>
+
+  <!-- Micro chip pads -->
+  <g fill="none" stroke="#60b8ff" stroke-width="0.5" opacity="0.1">
+    <rect x="580" y="300" width="40" height="28" rx="2"/>
+    <rect x="586" y="290" width="4" height="10"/>
+    <rect x="594" y="290" width="4" height="10"/>
+    <rect x="602" y="290" width="4" height="10"/>
+    <rect x="610" y="290" width="4" height="10"/>
+    <rect x="586" y="328" width="4" height="10"/>
+    <rect x="594" y="328" width="4" height="10"/>
+    <rect x="602" y="328" width="4" height="10"/>
+    <rect x="610" y="328" width="4" height="10"/>
+    <rect x="1000" y="160" width="36" height="24" rx="2"/>
+    <rect x="1006" y="150" width="4" height="10"/>
+    <rect x="1014" y="150" width="4" height="10"/>
+    <rect x="1022" y="150" width="4" height="10"/>
+    <rect x="1006" y="184" width="4" height="10"/>
+    <rect x="1014" y="184" width="4" height="10"/>
+    <rect x="1022" y="184" width="4" height="10"/>
+  </g>
+
+  <!-- Binary fragments -->
+  <g font-family="monospace" font-size="10" fill="#60b8ff" opacity="0.06">
+    <text x="80"   y="80">01001000</text>
+    <text x="900"  y="120">11010110</text>
+    <text x="400"  y="820">00110101</text>
+    <text x="1200" y="820">10110010</text>
+    <text x="60"   y="460">11001001</text>
+    <text x="1300" y="460">01110100</text>
+  </g>
+</svg>

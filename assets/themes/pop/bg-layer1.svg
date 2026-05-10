@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#120010"/>
+      <stop offset="100%" stop-color="#060008"/>
+    </radialGradient>
+    <radialGradient id="spot1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f472b6" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#f472b6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="spot2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="spot3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#fbbf24" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bg)"/>
+  <ellipse cx="400" cy="200" rx="350" ry="300" fill="url(#spot1)"/>
+  <ellipse cx="1100" cy="500" rx="350" ry="300" fill="url(#spot2)"/>
+  <ellipse cx="720" cy="800" rx="300" ry="200" fill="url(#spot3)"/>
+
+  <!-- Spotlight cones from top -->
+  <g opacity="0.05">
+    <polygon points="300,0 240,900 360,900" fill="#f472b6"/>
+    <polygon points="720,0 620,900 820,900" fill="#ffffff"/>
+    <polygon points="1140,0 1080,900 1200,900" fill="#a78bfa"/>
+  </g>
+
+  <!-- Film strip top -->
+  <g fill="none" stroke="#f472b6" stroke-width="0.8" opacity="0.1">
+    <rect x="0" y="20" width="1440" height="80"/>
+    <rect x="0" y="20" width="1440" height="80" fill="#f472b6" opacity="0.03"/>
+    <!-- Sprocket holes -->
+    <rect x="20" y="30" width="20" height="14" rx="3" fill="#f472b6" opacity="0.15"/>
+    <rect x="20" y="56" width="20" height="14" rx="3" fill="#f472b6" opacity="0.15"/>
+    <rect x="20" y="76" width="20" height="14" rx="3" fill="#f472b6" opacity="0.15"/>
+    <rect x="60" y="30" width="20" height="14" rx="3" fill="#f472b6" opacity="0.15"/>
+    <rect x="60" y="56" width="20" height="14" rx="3" fill="#f472b6" opacity="0.15"/>
+    <rect x="60" y="76" width="20" height="14" rx="3" fill="#f472b6" opacity="0.15"/>
+    <rect x="100" y="30" width="20" height="14" rx="3" fill="#f472b6" opacity="0.15"/>
+    <rect x="100" y="56" width="20" height="14" rx="3" fill="#f472b6" opacity="0.15"/>
+    <rect x="100" y="76" width="20" height="14" rx="3" fill="#f472b6" opacity="0.15"/>
+  </g>
+
+  <!-- Film strip bottom -->
+  <g fill="none" stroke="#a78bfa" stroke-width="0.8" opacity="0.1">
+    <rect x="0" y="800" width="1440" height="80"/>
+    <rect x="0" y="800" width="1440" height="80" fill="#a78bfa" opacity="0.03"/>
+    <rect x="20" y="810" width="20" height="14" rx="3" fill="#a78bfa" opacity="0.15"/>
+    <rect x="20" y="836" width="20" height="14" rx="3" fill="#a78bfa" opacity="0.15"/>
+    <rect x="20" y="856" width="20" height="14" rx="3" fill="#a78bfa" opacity="0.15"/>
+    <rect x="60" y="810" width="20" height="14" rx="3" fill="#a78bfa" opacity="0.15"/>
+    <rect x="60" y="836" width="20" height="14" rx="3" fill="#a78bfa" opacity="0.15"/>
+    <rect x="60" y="856" width="20" height="14" rx="3" fill="#a78bfa" opacity="0.15"/>
+  </g>
+
+  <!-- Neon star/sparkle elements -->
+  <g fill="#f472b6" opacity="0.15">
+    <polygon points="200,300 204,312 216,312 206,320 210,332 200,324 190,332 194,320 184,312 196,312" />
+    <polygon points="1200,200 1203,209 1212,209 1205,215 1208,224 1200,218 1192,224 1195,215 1188,209 1197,209" />
+    <polygon points="800,700 803,709 812,709 805,715 808,724 800,718 792,724 795,715 788,709 797,709" />
+  </g>
+
+  <!-- Music notes scattered -->
+  <g font-size="32" fill="#f472b6" opacity="0.06" font-family="serif">
+    <text x="150" y="500">♪</text>
+    <text x="600" y="400">♫</text>
+    <text x="1100" y="700">♩</text>
+    <text x="900" y="200">♬</text>
+  </g>
+
+  <!-- Neon grid -->
+  <g stroke="#f472b6" stroke-width="0.3" opacity="0.04">
+    <line x1="0" y1="150" x2="1440" y2="150"/>
+    <line x1="0" y1="300" x2="1440" y2="300"/>
+    <line x1="0" y1="450" x2="1440" y2="450"/>
+    <line x1="0" y1="600" x2="1440" y2="600"/>
+    <line x1="0" y1="750" x2="1440" y2="750"/>
+    <line x1="240" y1="0" x2="240" y2="900"/>
+    <line x1="480" y1="0" x2="480" y2="900"/>
+    <line x1="720" y1="0" x2="720" y2="900"/>
+    <line x1="960" y1="0" x2="960" y2="900"/>
+    <line x1="1200" y1="0" x2="1200" y2="900"/>
+  </g>
+</svg>

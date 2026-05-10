@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="streak1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#378ADD" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#378ADD" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="streak2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#60b8ff" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#60b8ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="streak3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#fbbf24" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="speedline" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#378ADD" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#378ADD" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#378ADD" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="speedline2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#60b8ff" stop-opacity="0"/>
+      <stop offset="60%" stop-color="#60b8ff" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#60b8ff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="none"/>
+
+  <!-- Horizontal speed streaks -->
+  <g>
+    <rect x="0" y="200" width="600" height="1.5" fill="url(#speedline)" opacity="0.8"/>
+    <rect x="0" y="210" width="500" height="1"   fill="url(#speedline)" opacity="0.6"/>
+    <rect x="0" y="220" width="700" height="1.5" fill="url(#speedline)" opacity="0.7"/>
+    <rect x="0" y="230" width="400" height="1"   fill="url(#speedline)" opacity="0.5"/>
+    <rect x="840" y="680" width="600" height="1.5" fill="url(#speedline2)" opacity="0.7"/>
+    <rect x="940" y="690" width="500" height="1"   fill="url(#speedline2)" opacity="0.55"/>
+    <rect x="780" y="700" width="660" height="1.5" fill="url(#speedline2)" opacity="0.65"/>
+    <rect x="900" y="710" width="540" height="1"   fill="url(#speedline2)" opacity="0.5"/>
+  </g>
+
+  <!-- Podium silhouette — bottom center -->
+  <g transform="translate(580, 900)" opacity="0.07" fill="#fbbf24">
+    <!-- 1st place (center, tallest) -->
+    <rect x="120" y="-160" width="120" height="160"/>
+    <!-- 2nd place (left) -->
+    <rect x="0"   y="-110" width="110" height="110"/>
+    <!-- 3rd place (right) -->
+    <rect x="250" y="-80"  width="110" height="80"/>
+    <!-- Numbers -->
+    <text x="168" y="-170" font-family="Arial Black, sans-serif" font-size="22" fill="#fbbf24" opacity="0.5" text-anchor="middle">1</text>
+    <text x="55"  y="-118" font-family="Arial Black, sans-serif" font-size="18" fill="#fbbf24" opacity="0.4" text-anchor="middle">2</text>
+    <text x="305" y="-88"  font-family="Arial Black, sans-serif" font-size="18" fill="#fbbf24" opacity="0.4" text-anchor="middle">3</text>
+  </g>
+
+  <!-- Bright foreground spark glows -->
+  <g filter="url(#glow)">
+    <ellipse cx="320"  cy="160" rx="5" ry="5" fill="url(#streak1)" opacity="0.45"/>
+    <ellipse cx="760"  cy="280" rx="6" ry="6" fill="url(#streak2)" opacity="0.4"/>
+    <ellipse cx="480"  cy="480" rx="4" ry="4" fill="url(#streak3)" opacity="0.38"/>
+    <ellipse cx="1060" cy="360" rx="5" ry="5" fill="url(#streak1)" opacity="0.38"/>
+    <ellipse cx="880"  cy="560" rx="5" ry="5" fill="url(#streak2)" opacity="0.35"/>
+    <ellipse cx="240"  cy="680" rx="4" ry="4" fill="url(#streak3)" opacity="0.35"/>
+    <ellipse cx="1280" cy="500" rx="4" ry="4" fill="url(#streak1)" opacity="0.32"/>
+  </g>
+
+  <!-- Crisp foreground dots -->
+  <g fill="#378ADD">
+    <circle cx="180"  cy="120" r="1.5" opacity="0.6"/>
+    <circle cx="540"  cy="80"  r="1"   opacity="0.55"/>
+    <circle cx="920"  cy="140" r="1.5" opacity="0.55"/>
+    <circle cx="360"  cy="360" r="1"   opacity="0.5"/>
+    <circle cx="740"  cy="420" r="1.5" opacity="0.55"/>
+    <circle cx="1140" cy="240" r="1"   opacity="0.5"/>
+    <circle cx="600"  cy="660" r="1.5" opacity="0.48"/>
+    <circle cx="1380" cy="380" r="1"   opacity="0.45"/>
+  </g>
+  <g fill="#fbbf24">
+    <circle cx="440"  cy="240" r="1.5" opacity="0.5"/>
+    <circle cx="1000" cy="460" r="1"   opacity="0.45"/>
+    <circle cx="220"  cy="560" r="1.5" opacity="0.45"/>
+    <circle cx="1220" cy="700" r="1"   opacity="0.4"/>
+    <circle cx="680"  cy="800" r="1.5" opacity="0.42"/>
+  </g>
+
+  <!-- Corner vignette glows -->
+  <ellipse cx="0"    cy="0"   rx="180" ry="180" fill="url(#streak2)" opacity="0.1"/>
+  <ellipse cx="1440" cy="900" rx="200" ry="200" fill="url(#streak3)" opacity="0.08"/>
+</svg>

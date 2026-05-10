@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#94a3b8" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#94a3b8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#60b8ff" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#60b8ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c4b5fd" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#c4b5fd" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1440" height="900" fill="none"/>
+
+  <!-- Fountain pen nib — top right foreground -->
+  <g transform="translate(1360, 80) rotate(35)" opacity="0.1" stroke="#94a3b8" fill="none">
+    <!-- Barrel -->
+    <rect x="-10" y="-120" width="20" height="100" rx="4" stroke-width="0.8"/>
+    <!-- Nib section -->
+    <path d="M-10,-20 L-14,40 L0,60 L14,40 L10,-20 Z" stroke-width="0.8"/>
+    <!-- Nib split -->
+    <line x1="0" y1="20" x2="0" y2="60" stroke-width="0.6"/>
+    <!-- Tine details -->
+    <path d="M-14,40 Q-8,50 0,60" stroke-width="0.5"/>
+    <path d="M14,40 Q8,50 0,60" stroke-width="0.5"/>
+    <!-- Ink drop at tip -->
+    <circle cx="0" cy="64" r="4" fill="#94a3b8" opacity="0.3" stroke="none"/>
+    <!-- Clip -->
+    <rect x="10" y="-118" width="4" height="90" rx="2" stroke-width="0.5"/>
+    <circle cx="12" cy="-26" r="4" stroke-width="0.5"/>
+  </g>
+
+  <!-- Large foreground quotation marks — decorative -->
+  <g font-family="Georgia, serif" font-weight="900" opacity="0.06">
+    <text x="60"   y="300" font-size="160" fill="#94a3b8">"</text>
+    <text x="1260" y="700" font-size="160" fill="#94a3b8">"</text>
+  </g>
+
+  <!-- Typewriter strike-through text suggestion -->
+  <g opacity="0.06" stroke="#94a3b8">
+    <line x1="500" y1="580" x2="900" y2="580" stroke-width="8" stroke-linecap="round"/>
+    <line x1="500" y1="580" x2="900" y2="580" stroke-width="1" stroke="#94a3b8" opacity="0.4"/>
+  </g>
+
+  <!-- Ink splatter at nib -->
+  <g transform="translate(1360, 80)" filter="url(#glow)" opacity="0.15">
+    <circle cx="0"   cy="64"  r="6"  fill="#94a3b8"/>
+    <circle cx="10"  cy="72"  r="2"  fill="#94a3b8"/>
+    <circle cx="-8"  cy="74"  r="2"  fill="#94a3b8"/>
+    <circle cx="4"   cy="80"  r="1.5" fill="#94a3b8"/>
+  </g>
+
+  <!-- Bright foreground glow particles -->
+  <g filter="url(#glow)">
+    <ellipse cx="380"  cy="180" rx="5" ry="5" fill="url(#glow1)" opacity="0.4"/>
+    <ellipse cx="760"  cy="300" rx="6" ry="6" fill="url(#glow2)" opacity="0.36"/>
+    <ellipse cx="200"  cy="480" rx="4" ry="4" fill="url(#glow3)" opacity="0.34"/>
+    <ellipse cx="1060" cy="380" rx="5" ry="5" fill="url(#glow1)" opacity="0.36"/>
+    <ellipse cx="600"  cy="620" rx="5" ry="5" fill="url(#glow2)" opacity="0.32"/>
+    <ellipse cx="1240" cy="560" rx="4" ry="4" fill="url(#glow3)" opacity="0.32"/>
+    <ellipse cx="440"  cy="760" rx="4" ry="4" fill="url(#glow1)" opacity="0.3"/>
+    <ellipse cx="920"  cy="740" rx="5" ry="5" fill="url(#glow2)" opacity="0.3"/>
+  </g>
+
+  <!-- Crisp foreground specks -->
+  <g fill="#94a3b8">
+    <circle cx="240"  cy="140" r="1.5" opacity="0.6"/>
+    <circle cx="580"  cy="100" r="1"   opacity="0.55"/>
+    <circle cx="920"  cy="160" r="1.5" opacity="0.55"/>
+    <circle cx="340"  cy="360" r="1"   opacity="0.5"/>
+    <circle cx="720"  cy="460" r="1.5" opacity="0.52"/>
+    <circle cx="1140" cy="260" r="1"   opacity="0.48"/>
+    <circle cx="500"  cy="700" r="1.5" opacity="0.48"/>
+    <circle cx="1360" cy="460" r="1"   opacity="0.44"/>
+    <circle cx="160"  cy="820" r="1.5" opacity="0.42"/>
+    <circle cx="1060" cy="840" r="1"   opacity="0.4"/>
+  </g>
+  <g fill="#60b8ff">
+    <circle cx="460"  cy="240" r="1.5" opacity="0.5"/>
+    <circle cx="880"  cy="400" r="1"   opacity="0.45"/>
+    <circle cx="280"  cy="620" r="1.5" opacity="0.46"/>
+    <circle cx="1200" cy="720" r="1"   opacity="0.4"/>
+    <circle cx="700"  cy="800" r="1.5" opacity="0.42"/>
+  </g>
+  <g fill="#c4b5fd">
+    <circle cx="640"  cy="180" r="1.5" opacity="0.48"/>
+    <circle cx="1020" cy="520" r="1"   opacity="0.42"/>
+    <circle cx="380"  cy="540" r="1"   opacity="0.42"/>
+    <circle cx="1280" cy="340" r="1.5" opacity="0.44"/>
+  </g>
+
+  <!-- Corner vignette glows -->
+  <ellipse cx="0"    cy="0"   rx="180" ry="180" fill="url(#glow1)" opacity="0.09"/>
+  <ellipse cx="1440" cy="900" rx="200" ry="200" fill="url(#glow2)" opacity="0.08"/>
+</svg>

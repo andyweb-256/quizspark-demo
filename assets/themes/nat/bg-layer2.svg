@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="orb1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4ade80" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#f97316" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#fbbf24" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="none"/>
+
+  <!-- Honeycomb grid — top right -->
+  <g stroke="#fbbf24" stroke-width="0.6" opacity="0.09" fill="none">
+    <!-- Row 1 -->
+    <path d="M960,60 L990,77 L990,110 L960,127 L930,110 L930,77 Z"/>
+    <path d="M1020,60 L1050,77 L1050,110 L1020,127 L990,110 L990,77 Z"/>
+    <path d="M1080,60 L1110,77 L1110,110 L1080,127 L1050,110 L1050,77 Z"/>
+    <path d="M1140,60 L1170,77 L1170,110 L1140,127 L1110,110 L1110,77 Z"/>
+    <path d="M1200,60 L1230,77 L1230,110 L1200,127 L1170,110 L1170,77 Z"/>
+    <path d="M1260,60 L1290,77 L1290,110 L1260,127 L1230,110 L1230,77 Z"/>
+    <path d="M1320,60 L1350,77 L1350,110 L1320,127 L1290,110 L1290,77 Z"/>
+    <!-- Row 2 (offset) -->
+    <path d="M990,127 L1020,144 L1020,177 L990,194 L960,177 L960,144 Z"/>
+    <path d="M1050,127 L1080,144 L1080,177 L1050,194 L1020,177 L1020,144 Z"/>
+    <path d="M1110,127 L1140,144 L1140,177 L1110,194 L1080,177 L1080,144 Z"/>
+    <path d="M1170,127 L1200,144 L1200,177 L1170,194 L1140,177 L1140,144 Z"/>
+    <path d="M1230,127 L1260,144 L1260,177 L1230,194 L1200,177 L1200,144 Z"/>
+    <path d="M1290,127 L1320,144 L1320,177 L1290,194 L1260,177 L1260,144 Z"/>
+    <!-- Row 3 -->
+    <path d="M960,194 L990,211 L990,244 L960,261 L930,244 L930,211 Z"/>
+    <path d="M1020,194 L1050,211 L1050,244 L1020,261 L990,244 L990,211 Z"/>
+    <path d="M1080,194 L1110,211 L1110,244 L1080,261 L1050,244 L1050,211 Z"/>
+    <path d="M1140,194 L1170,211 L1170,244 L1140,261 L1110,244 L1110,211 Z"/>
+    <path d="M1200,194 L1230,211 L1230,244 L1200,261 L1170,244 L1170,211 Z"/>
+    <path d="M1260,194 L1290,211 L1290,244 L1260,261 L1230,244 L1230,211 Z"/>
+  </g>
+
+  <!-- Mycelium network threads -->
+  <g stroke="#4ade80" stroke-width="0.5" opacity="0.08" fill="none" stroke-linecap="round">
+    <path d="M0,600 Q80,560 140,600 Q200,640 280,580 Q360,520 440,560 Q520,600 600,540"/>
+    <path d="M140,600 Q150,660 120,720 Q90,780 140,840"/>
+    <path d="M280,580 Q270,640 240,700 Q210,760 260,820"/>
+    <path d="M440,560 Q430,620 400,680 Q370,740 420,800"/>
+    <path d="M600,540 Q680,500 760,540 Q840,580 920,520 Q1000,460 1080,500"/>
+    <path d="M760,540 Q750,600 720,660 Q690,720 740,780"/>
+    <path d="M920,520 Q910,580 880,640 Q850,700 900,760"/>
+    <path d="M1080,500 Q1160,460 1240,500 Q1320,540 1400,480 Q1440,460 1440,460"/>
+    <path d="M1240,500 Q1230,560 1200,620 Q1170,680 1220,740"/>
+    <!-- Node intersections -->
+    <circle cx="140"  cy="600" r="2.5" fill="#4ade80" opacity="0.3" stroke="none"/>
+    <circle cx="280"  cy="580" r="2.5" fill="#4ade80" opacity="0.3" stroke="none"/>
+    <circle cx="440"  cy="560" r="2.5" fill="#4ade80" opacity="0.3" stroke="none"/>
+    <circle cx="600"  cy="540" r="2.5" fill="#4ade80" opacity="0.3" stroke="none"/>
+    <circle cx="760"  cy="540" r="2.5" fill="#4ade80" opacity="0.3" stroke="none"/>
+    <circle cx="920"  cy="520" r="2.5" fill="#4ade80" opacity="0.3" stroke="none"/>
+    <circle cx="1080" cy="500" r="2.5" fill="#4ade80" opacity="0.3" stroke="none"/>
+    <circle cx="1240" cy="500" r="2.5" fill="#4ade80" opacity="0.3" stroke="none"/>
+  </g>
+
+  <!-- Seed burst / dandelion patterns -->
+  <g stroke="#f97316" stroke-width="0.5" opacity="0.09" fill="none">
+    <g transform="translate(280, 280)">
+      <line x1="0" y1="0" x2="0"    y2="-50"/>
+      <line x1="0" y1="0" x2="35"   y2="-35"/>
+      <line x1="0" y1="0" x2="50"   y2="0"/>
+      <line x1="0" y1="0" x2="35"   y2="35"/>
+      <line x1="0" y1="0" x2="0"    y2="50"/>
+      <line x1="0" y1="0" x2="-35"  y2="35"/>
+      <line x1="0" y1="0" x2="-50"  y2="0"/>
+      <line x1="0" y1="0" x2="-35"  y2="-35"/>
+      <line x1="0" y1="0" x2="18"   y2="-47"/>
+      <line x1="0" y1="0" x2="47"   y2="-18"/>
+      <line x1="0" y1="0" x2="47"   y2="18"/>
+      <line x1="0" y1="0" x2="18"   y2="47"/>
+      <line x1="0" y1="0" x2="-18"  y2="47"/>
+      <line x1="0" y1="0" x2="-47"  y2="18"/>
+      <line x1="0" y1="0" x2="-47"  y2="-18"/>
+      <line x1="0" y1="0" x2="-18"  y2="-47"/>
+      <circle r="4" fill="#f97316" opacity="0.3" stroke="none"/>
+      <!-- Seed tips -->
+      <circle cx="0"   cy="-50" r="2" fill="#f97316" opacity="0.25" stroke="none"/>
+      <circle cx="35"  cy="-35" r="2" fill="#f97316" opacity="0.25" stroke="none"/>
+      <circle cx="50"  cy="0"   r="2" fill="#f97316" opacity="0.25" stroke="none"/>
+      <circle cx="35"  cy="35"  r="2" fill="#f97316" opacity="0.25" stroke="none"/>
+      <circle cx="0"   cy="50"  r="2" fill="#f97316" opacity="0.25" stroke="none"/>
+      <circle cx="-35" cy="35"  r="2" fill="#f97316" opacity="0.25" stroke="none"/>
+      <circle cx="-50" cy="0"   r="2" fill="#f97316" opacity="0.25" stroke="none"/>
+      <circle cx="-35" cy="-35" r="2" fill="#f97316" opacity="0.25" stroke="none"/>
+    </g>
+    <!-- Smaller seed burst -->
+    <g transform="translate(1100, 700)">
+      <line x1="0" y1="0" x2="0"   y2="-32"/>
+      <line x1="0" y1="0" x2="23"  y2="-23"/>
+      <line x1="0" y1="0" x2="32"  y2="0"/>
+      <line x1="0" y1="0" x2="23"  y2="23"/>
+      <line x1="0" y1="0" x2="0"   y2="32"/>
+      <line x1="0" y1="0" x2="-23" y2="23"/>
+      <line x1="0" y1="0" x2="-32" y2="0"/>
+      <line x1="0" y1="0" x2="-23" y2="-23"/>
+      <circle r="3" fill="#f97316" opacity="0.25" stroke="none"/>
+    </g>
+  </g>
+
+  <!-- Soft glow nodes -->
+  <ellipse cx="280"  cy="280" rx="70"  ry="70"  fill="url(#orb2)" opacity="0.4"/>
+  <ellipse cx="1140" cy="160" rx="90"  ry="70"  fill="url(#orb3)" opacity="0.35"/>
+  <ellipse cx="700"  cy="540" rx="80"  ry="60"  fill="url(#orb1)" opacity="0.3"/>
+  <ellipse cx="1100" cy="700" rx="60"  ry="60"  fill="url(#orb2)" opacity="0.35"/>
+
+  <!-- Scattered pollen dots -->
+  <g fill="#4ade80">
+    <circle cx="420"  cy="160" r="1.5" opacity="0.35"/>
+    <circle cx="680"  cy="240" r="1"   opacity="0.3"/>
+    <circle cx="900"  cy="160" r="1.5" opacity="0.32"/>
+    <circle cx="160"  cy="440" r="1"   opacity="0.3"/>
+    <circle cx="840"  cy="440" r="1.5" opacity="0.32"/>
+    <circle cx="1280" cy="380" r="1"   opacity="0.28"/>
+    <circle cx="540"  cy="780" r="1.5" opacity="0.3"/>
+    <circle cx="1340" cy="680" r="1"   opacity="0.28"/>
+  </g>
+  <g fill="#f97316">
+    <circle cx="580"  cy="360" r="1.5" opacity="0.32"/>
+    <circle cx="1020" cy="440" r="1"   opacity="0.28"/>
+    <circle cx="320"  cy="620" r="1.5" opacity="0.3"/>
+    <circle cx="1200" cy="560" r="1"   opacity="0.26"/>
+  </g>
+</svg>

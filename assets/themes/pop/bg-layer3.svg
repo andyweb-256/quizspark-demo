@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="spark1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f472b6" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#f472b6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="spark2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="spark3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#fbbf24" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1440" height="900" fill="none"/>
+
+  <!-- Clapperboard — top left foreground -->
+  <g transform="translate(60, 50)" opacity="0.1" stroke="#f472b6" fill="none">
+    <!-- Board body -->
+    <rect width="160" height="120" rx="4" stroke-width="1"/>
+    <!-- Clapper arm -->
+    <rect x="0" y="-28" width="160" height="28" rx="2" stroke-width="1"/>
+    <!-- Clapper stripes -->
+    <line x1="20"  y1="-28" x2="0"   y2="0" stroke-width="2.5" stroke="#f472b6" opacity="0.4"/>
+    <line x1="50"  y1="-28" x2="30"  y2="0" stroke-width="2.5" stroke="#f472b6" opacity="0.4"/>
+    <line x1="80"  y1="-28" x2="60"  y2="0" stroke-width="2.5" stroke="#f472b6" opacity="0.4"/>
+    <line x1="110" y1="-28" x2="90"  y2="0" stroke-width="2.5" stroke="#f472b6" opacity="0.4"/>
+    <line x1="140" y1="-28" x2="120" y2="0" stroke-width="2.5" stroke="#f472b6" opacity="0.4"/>
+    <line x1="160" y1="-28" x2="145" y2="0" stroke-width="2.5" stroke="#f472b6" opacity="0.4"/>
+    <!-- Text lines on board -->
+    <line x1="16" y1="28" x2="144" y2="28" stroke-width="0.6" opacity="0.6"/>
+    <line x1="16" y1="48" x2="144" y2="48" stroke-width="0.6" opacity="0.6"/>
+    <line x1="16" y1="68" x2="100" y2="68" stroke-width="0.6" opacity="0.6"/>
+  </g>
+
+  <!-- Ticker tape / confetti strips -->
+  <g stroke="#f472b6" stroke-width="1.5" opacity="0.08" fill="none" stroke-linecap="round">
+    <path d="M600,0 Q580,60 610,120 Q640,180 620,240"/>
+    <path d="M700,0 Q720,50 700,100 Q680,150 705,200"/>
+    <path d="M820,0 Q800,70 830,140 Q860,210 840,280"/>
+    <path d="M1000,0 Q980,55 1010,110 Q1040,165 1020,220"/>
+  </g>
+  <g stroke="#a78bfa" stroke-width="1.5" opacity="0.07" fill="none" stroke-linecap="round">
+    <path d="M650,0 Q670,65 645,130 Q620,195 648,260"/>
+    <path d="M760,0 Q740,60 765,120 Q790,180 768,240"/>
+    <path d="M920,0 Q940,70 915,140 Q890,210 912,280"/>
+  </g>
+
+  <!-- Bright foreground neon sparks -->
+  <g filter="url(#glow)">
+    <ellipse cx="480"  cy="180" rx="5" ry="5" fill="url(#spark1)" opacity="0.45"/>
+    <ellipse cx="860"  cy="300" rx="6" ry="6" fill="url(#spark2)" opacity="0.4"/>
+    <ellipse cx="240"  cy="520" rx="4" ry="4" fill="url(#spark3)" opacity="0.38"/>
+    <ellipse cx="1100" cy="440" rx="5" ry="5" fill="url(#spark1)" opacity="0.38"/>
+    <ellipse cx="680"  cy="680" rx="5" ry="5" fill="url(#spark2)" opacity="0.35"/>
+    <ellipse cx="1300" cy="600" rx="4" ry="4" fill="url(#spark3)" opacity="0.35"/>
+    <ellipse cx="380"  cy="800" rx="4" ry="4" fill="url(#spark1)" opacity="0.32"/>
+  </g>
+
+  <!-- Crisp bright foreground dots -->
+  <g fill="#f472b6">
+    <circle cx="200"  cy="200" r="1.5" opacity="0.6"/>
+    <circle cx="560"  cy="100" r="1"   opacity="0.55"/>
+    <circle cx="960"  cy="200" r="1.5" opacity="0.55"/>
+    <circle cx="340"  cy="440" r="1"   opacity="0.5"/>
+    <circle cx="780"  cy="500" r="1.5" opacity="0.55"/>
+    <circle cx="1160" cy="300" r="1"   opacity="0.5"/>
+    <circle cx="540"  cy="760" r="1.5" opacity="0.48"/>
+    <circle cx="1360" cy="760" r="1"   opacity="0.45"/>
+  </g>
+  <g fill="#a78bfa">
+    <circle cx="420"  cy="300" r="1.5" opacity="0.55"/>
+    <circle cx="1020" cy="560" r="1"   opacity="0.5"/>
+    <circle cx="180"  cy="700" r="1.5" opacity="0.48"/>
+    <circle cx="880"  cy="820" r="1"   opacity="0.42"/>
+    <circle cx="1240" cy="160" r="1.5" opacity="0.5"/>
+  </g>
+  <g fill="#fbbf24">
+    <circle cx="640"  cy="380" r="1.5" opacity="0.5"/>
+    <circle cx="1080" cy="720" r="1"   opacity="0.45"/>
+    <circle cx="300"  cy="160" r="1"   opacity="0.45"/>
+  </g>
+
+  <!-- Corner vignette neon glows -->
+  <ellipse cx="0"    cy="900" rx="200" ry="200" fill="url(#spark1)" opacity="0.1"/>
+  <ellipse cx="1440" cy="0"   rx="200" ry="200" fill="url(#spark2)" opacity="0.08"/>
+</svg>

@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="orb1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#94a3b8" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#94a3b8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#60b8ff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#60b8ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c4b5fd" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#c4b5fd" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="none"/>
+
+  <!-- Typewriter key grid — bottom left -->
+  <g transform="translate(60, 620)" opacity="0.08" stroke="#94a3b8" fill="none">
+    <!-- Row 1 -->
+    <rect x="0"   y="0"  width="38" height="38" rx="5" stroke-width="0.8"/>
+    <rect x="46"  y="0"  width="38" height="38" rx="5" stroke-width="0.8"/>
+    <rect x="92"  y="0"  width="38" height="38" rx="5" stroke-width="0.8"/>
+    <rect x="138" y="0"  width="38" height="38" rx="5" stroke-width="0.8"/>
+    <rect x="184" y="0"  width="38" height="38" rx="5" stroke-width="0.8"/>
+    <rect x="230" y="0"  width="38" height="38" rx="5" stroke-width="0.8"/>
+    <rect x="276" y="0"  width="38" height="38" rx="5" stroke-width="0.8"/>
+    <rect x="322" y="0"  width="38" height="38" rx="5" stroke-width="0.8"/>
+    <!-- Row 1 letters -->
+    <text x="19"  y="24" font-family="monospace" font-size="14" text-anchor="middle" fill="#94a3b8" stroke="none" opacity="0.5">Q</text>
+    <text x="65"  y="24" font-family="monospace" font-size="14" text-anchor="middle" fill="#94a3b8" stroke="none" opacity="0.5">W</text>
+    <text x="111" y="24" font-family="monospace" font-size="14" text-anchor="middle" fill="#94a3b8" stroke="none" opacity="0.5">E</text>
+    <text x="157" y="24" font-family="monospace" font-size="14" text-anchor="middle" fill="#94a3b8" stroke="none" opacity="0.5">R</text>
+    <text x="203" y="24" font-family="monospace" font-size="14" text-anchor="middle" fill="#94a3b8" stroke="none" opacity="0.5">T</text>
+    <text x="249" y="24" font-family="monospace" font-size="14" text-anchor="middle" fill="#94a3b8" stroke="none" opacity="0.5">Y</text>
+    <text x="295" y="24" font-family="monospace" font-size="14" text-anchor="middle" fill="#94a3b8" stroke="none" opacity="0.5">U</text>
+    <text x="341" y="24" font-family="monospace" font-size="14" text-anchor="middle" fill="#94a3b8" stroke="none" opacity="0.5">I</text>
+    <!-- Row 2 (offset) -->
+    <rect x="23"  y="46" width="38" height="38" rx="5" stroke-width="0.8"/>
+    <rect x="69"  y="46" width="38" height="38" rx="5" stroke-width="0.8"/>
+    <rect x="115" y="46" width="38" height="38" rx="5" stroke-width="0.8"/>
+    <rect x="161" y="46" width="38" height="38" rx="5" stroke-width="0.8"/>
+    <rect x="207" y="46" width="38" height="38" rx="5" stroke-width="0.8"/>
+    <rect x="253" y="46" width="38" height="38" rx="5" stroke-width="0.8"/>
+    <rect x="299" y="46" width="38" height="38" rx="5" stroke-width="0.8"/>
+    <text x="42"  y="70" font-family="monospace" font-size="14" text-anchor="middle" fill="#94a3b8" stroke="none" opacity="0.5">A</text>
+    <text x="88"  y="70" font-family="monospace" font-size="14" text-anchor="middle" fill="#94a3b8" stroke="none" opacity="0.5">S</text>
+    <text x="134" y="70" font-family="monospace" font-size="14" text-anchor="middle" fill="#94a3b8" stroke="none" opacity="0.5">D</text>
+    <text x="180" y="70" font-family="monospace" font-size="14" text-anchor="middle" fill="#94a3b8" stroke="none" opacity="0.5">F</text>
+    <text x="226" y="70" font-family="monospace" font-size="14" text-anchor="middle" fill="#94a3b8" stroke="none" opacity="0.5">G</text>
+    <text x="272" y="70" font-family="monospace" font-size="14" text-anchor="middle" fill="#94a3b8" stroke="none" opacity="0.5">H</text>
+    <text x="318" y="70" font-family="monospace" font-size="14" text-anchor="middle" fill="#94a3b8" stroke="none" opacity="0.5">J</text>
+  </g>
+
+  <!-- Scattered floating alphabet letters -->
+  <g font-family="Georgia, serif" font-weight="700" fill="#94a3b8" opacity="0.07">
+    <text x="600"  y="160" font-size="48" transform="rotate(-12 600 160)">W</text>
+    <text x="900"  y="280" font-size="36" transform="rotate(8 900 280)">K</text>
+    <text x="1200" y="180" font-size="52" transform="rotate(-6 1200 180)">Q</text>
+    <text x="480"  y="420" font-size="32" transform="rotate(15 480 420)">X</text>
+    <text x="1060" y="500" font-size="44" transform="rotate(-10 1060 500)">Z</text>
+    <text x="260"  y="340" font-size="38" transform="rotate(5 260 340)">M</text>
+    <text x="800"  y="620" font-size="40" transform="rotate(-8 800 620)">P</text>
+    <text x="1300" y="680" font-size="34" transform="rotate(12 1300 680)">V</text>
+    <text x="140"  y="720" font-size="30" transform="rotate(-5 140 720)">Y</text>
+  </g>
+
+  <!-- Speech bubble network -->
+  <g stroke="#94a3b8" stroke-width="0.7" opacity="0.09" fill="none">
+    <!-- Large bubble right -->
+    <rect x="920" y="300" width="220" height="100" rx="16"/>
+    <path d="M960,400 L950,430 L990,400Z"/>
+    <!-- Text lines inside -->
+    <line x1="944" y1="330" x2="1116" y2="330" stroke-width="0.4"/>
+    <line x1="944" y1="348" x2="1116" y2="348" stroke-width="0.4"/>
+    <line x1="944" y1="366" x2="1060" y2="366" stroke-width="0.4"/>
+    <!-- Small bubble top left -->
+    <rect x="480" y="180" width="150" height="70" rx="12"/>
+    <path d="M510,250 L500,275 L540,250Z"/>
+    <line x1="500" y1="204" x2="614" y2="204" stroke-width="0.4"/>
+    <line x1="500" y1="220" x2="614" y2="220" stroke-width="0.4"/>
+    <line x1="500" y1="236" x2="580" y2="236" stroke-width="0.4"/>
+    <!-- Round thought bubble -->
+    <circle cx="300" cy="500" r="55"/>
+    <circle cx="270" cy="558" r="8"/>
+    <circle cx="255" cy="574" r="5"/>
+    <circle cx="244" cy="585" r="3"/>
+    <line x1="270" y1="510" x2="270" y2="490" stroke-width="0.4"/>
+    <line x1="270" y1="510" x2="330" y2="490" stroke-width="0.4"/>
+    <line x1="270" y1="520" x2="330" y2="520" stroke-width="0.4"/>
+    <line x1="270" y1="530" x2="310" y2="530" stroke-width="0.4"/>
+  </g>
+
+  <!-- Soft glow nodes -->
+  <ellipse cx="1030" cy="350" rx="80"  ry="65"  fill="url(#orb1)" opacity="0.38"/>
+  <ellipse cx="555"  cy="215" rx="65"  ry="50"  fill="url(#orb2)" opacity="0.32"/>
+  <ellipse cx="300"  cy="500" rx="70"  ry="70"  fill="url(#orb3)" opacity="0.3"/>
+  <ellipse cx="900"  cy="700" rx="75"  ry="55"  fill="url(#orb1)" opacity="0.28"/>
+
+  <!-- Scattered letter-dot particles -->
+  <g fill="#94a3b8">
+    <circle cx="440"  cy="120" r="1.5" opacity="0.35"/>
+    <circle cx="760"  cy="200" r="1"   opacity="0.3"/>
+    <circle cx="1080" cy="140" r="1.5" opacity="0.32"/>
+    <circle cx="200"  cy="400" r="1"   opacity="0.3"/>
+    <circle cx="700"  cy="460" r="1.5" opacity="0.32"/>
+    <circle cx="1240" cy="420" r="1"   opacity="0.28"/>
+    <circle cx="520"  cy="760" r="1.5" opacity="0.3"/>
+    <circle cx="1160" cy="760" r="1"   opacity="0.26"/>
+    <circle cx="360"  cy="840" r="1.5" opacity="0.28"/>
+  </g>
+  <g fill="#60b8ff">
+    <circle cx="620"  cy="340" r="1.5" opacity="0.3"/>
+    <circle cx="1000" cy="600" r="1"   opacity="0.26"/>
+    <circle cx="180"  cy="620" r="1.5" opacity="0.28"/>
+    <circle cx="1380" cy="540" r="1"   opacity="0.26"/>
+  </g>
+</svg>

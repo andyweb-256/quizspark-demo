@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#60b8ff" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#60b8ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur1">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+    <filter id="blur2">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+
+  <rect width="1440" height="900" fill="none"/>
+
+  <!-- Large foreground atom — top right, partially cropped -->
+  <g transform="translate(1280, 120)" opacity="0.13" fill="none" stroke="#60b8ff">
+    <ellipse rx="140" ry="56" stroke-width="1.2" transform="rotate(0)"/>
+    <ellipse rx="140" ry="56" stroke-width="1.2" transform="rotate(60)"/>
+    <ellipse rx="140" ry="56" stroke-width="1.2" transform="rotate(120)"/>
+    <circle r="14" fill="#60b8ff" opacity="0.5"/>
+    <!-- Electron dots -->
+    <circle cx="140" cy="0"   r="5" fill="#60b8ff" opacity="0.8" stroke="none"/>
+    <circle cx="-70" cy="121" r="4" fill="#a78bfa" opacity="0.8" stroke="none"/>
+    <circle cx="-70" cy="-121" r="4" fill="#34d399" opacity="0.8" stroke="none"/>
+  </g>
+
+  <!-- Small atom — bottom left -->
+  <g transform="translate(140, 760)" opacity="0.1" fill="none" stroke="#a78bfa">
+    <ellipse rx="70" ry="28" stroke-width="1" transform="rotate(0)"/>
+    <ellipse rx="70" ry="28" stroke-width="1" transform="rotate(60)"/>
+    <ellipse rx="70" ry="28" stroke-width="1" transform="rotate(120)"/>
+    <circle r="7" fill="#a78bfa" opacity="0.5"/>
+    <circle cx="70" cy="0" r="3" fill="#a78bfa" opacity="0.8" stroke="none"/>
+    <circle cx="-35" cy="61" r="3" fill="#60b8ff" opacity="0.8" stroke="none"/>
+  </g>
+
+  <!-- Bright foreground particles — these appear "closest" -->
+  <g filter="url(#blur1)">
+    <circle cx="480"  cy="160" r="4" fill="#60b8ff" opacity="0.35"/>
+    <circle cx="960"  cy="340" r="5" fill="#a78bfa" opacity="0.3"/>
+    <circle cx="240"  cy="520" r="3" fill="#34d399" opacity="0.3"/>
+    <circle cx="1200" cy="600" r="4" fill="#60b8ff" opacity="0.3"/>
+    <circle cx="720"  cy="760" r="5" fill="#a78bfa" opacity="0.28"/>
+    <circle cx="360"  cy="840" r="3" fill="#60b8ff" opacity="0.25"/>
+    <circle cx="1080" cy="820" r="4" fill="#34d399" opacity="0.28"/>
+  </g>
+
+  <!-- Hard bright dots (no blur) — crisp foreground specks -->
+  <g fill="#60b8ff">
+    <circle cx="560"  cy="80"  r="1.5" opacity="0.6"/>
+    <circle cx="880"  cy="200" r="1"   opacity="0.5"/>
+    <circle cx="160"  cy="380" r="1.5" opacity="0.55"/>
+    <circle cx="1360" cy="440" r="1"   opacity="0.5"/>
+    <circle cx="640"  cy="580" r="1.5" opacity="0.5"/>
+    <circle cx="1120" cy="720" r="1"   opacity="0.45"/>
+    <circle cx="320"  cy="700" r="1.5" opacity="0.5"/>
+  </g>
+  <g fill="#a78bfa">
+    <circle cx="1040" cy="100" r="1.5" opacity="0.55"/>
+    <circle cx="200"  cy="240" r="1"   opacity="0.5"/>
+    <circle cx="800"  cy="640" r="1.5" opacity="0.5"/>
+    <circle cx="440"  cy="440" r="1"   opacity="0.45"/>
+  </g>
+
+  <!-- Foreground scan line — subtle horizontal streak -->
+  <g opacity="0.04">
+    <rect x="0" y="449" width="1440" height="1" fill="#60b8ff"/>
+    <rect x="0" y="450" width="1440" height="1" fill="#60b8ff" opacity="0.5"/>
+  </g>
+
+  <!-- Corner vignette glow accents -->
+  <ellipse cx="0"    cy="0"   rx="200" ry="200" fill="url(#glow1)" opacity="0.12"/>
+  <ellipse cx="1440" cy="900" rx="200" ry="200" fill="url(#glow2)" opacity="0.1"/>
+
+  <!-- Floating equation — foreground, very faint -->
+  <g font-family="monospace" font-size="11" fill="#60b8ff" opacity="0.08">
+    <text x="660" y="460">∑ = nkT</text>
+  </g>
+</svg>

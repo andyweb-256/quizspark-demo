@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="ember1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fb923c" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#fb923c" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ember2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#fbbf24" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="seal" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fb923c" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#7a1c00" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1440" height="900" fill="none"/>
+
+  <!-- Wax seal — bottom right foreground -->
+  <g transform="translate(1320, 800)" opacity="0.12">
+    <circle r="52" fill="url(#seal)"/>
+    <circle r="52" fill="none" stroke="#fb923c" stroke-width="1.2"/>
+    <circle r="44" fill="none" stroke="#fb923c" stroke-width="0.5" stroke-dasharray="3,5"/>
+    <circle r="32" fill="none" stroke="#fb923c" stroke-width="0.8"/>
+    <!-- Monogram cross -->
+    <line x1="0" y1="-22" x2="0" y2="22" stroke="#fb923c" stroke-width="1.5"/>
+    <line x1="-22" y1="0" x2="22" y2="0" stroke="#fb923c" stroke-width="1.5"/>
+    <circle r="5" fill="#fb923c" opacity="0.6"/>
+  </g>
+
+  <!-- Quill tip — top left, partially cropped -->
+  <g transform="translate(80, 60)" opacity="0.1" stroke="#fbbf24" fill="none">
+    <!-- Feather vane -->
+    <path d="M0,120 Q-30,60 -10,0 Q10,40 0,120" stroke-width="0.8" fill="#fbbf24" opacity="0.15"/>
+    <path d="M0,120 Q30,60 10,0 Q-10,40 0,120" stroke-width="0.8" fill="#fbbf24" opacity="0.15"/>
+    <!-- Quill shaft -->
+    <line x1="0" y1="0" x2="0" y2="140" stroke-width="1"/>
+    <!-- Nib -->
+    <path d="M0,140 L-4,160 L0,180 L4,160 Z" stroke-width="0.6" fill="#fbbf24" opacity="0.3"/>
+    <!-- Barbs -->
+    <line x1="0" y1="30"  x2="-18" y2="20"  stroke-width="0.4"/>
+    <line x1="0" y1="50"  x2="-22" y2="38"  stroke-width="0.4"/>
+    <line x1="0" y1="70"  x2="-24" y2="56"  stroke-width="0.4"/>
+    <line x1="0" y1="90"  x2="-20" y2="78"  stroke-width="0.4"/>
+    <line x1="0" y1="30"  x2="18"  y2="20"  stroke-width="0.4"/>
+    <line x1="0" y1="50"  x2="22"  y2="38"  stroke-width="0.4"/>
+    <line x1="0" y1="70"  x2="24"  y2="56"  stroke-width="0.4"/>
+    <line x1="0" y1="90"  x2="20"  y2="78"  stroke-width="0.4"/>
+  </g>
+
+  <!-- Bright foreground ember particles -->
+  <g filter="url(#glow)">
+    <ellipse cx="560"  cy="200" rx="5" ry="5" fill="url(#ember1)" opacity="0.4"/>
+    <ellipse cx="900"  cy="380" rx="6" ry="6" fill="url(#ember2)" opacity="0.35"/>
+    <ellipse cx="280"  cy="620" rx="4" ry="4" fill="url(#ember1)" opacity="0.35"/>
+    <ellipse cx="1140" cy="480" rx="5" ry="5" fill="url(#ember2)" opacity="0.3"/>
+    <ellipse cx="720"  cy="740" rx="4" ry="4" fill="url(#ember1)" opacity="0.32"/>
+    <ellipse cx="420"  cy="440" rx="3" ry="3" fill="url(#ember2)" opacity="0.3"/>
+    <ellipse cx="1280" cy="300" rx="4" ry="4" fill="url(#ember1)" opacity="0.3"/>
+  </g>
+
+  <!-- Crisp foreground spark dots -->
+  <g fill="#fb923c">
+    <circle cx="200"  cy="140" r="1.5" opacity="0.55"/>
+    <circle cx="640"  cy="100" r="1"   opacity="0.5"/>
+    <circle cx="1000" cy="220" r="1.5" opacity="0.5"/>
+    <circle cx="380"  cy="360" r="1"   opacity="0.45"/>
+    <circle cx="820"  cy="500" r="1.5" opacity="0.5"/>
+    <circle cx="1180" cy="660" r="1"   opacity="0.45"/>
+    <circle cx="480"  cy="780" r="1.5" opacity="0.45"/>
+    <circle cx="100"  cy="800" r="1"   opacity="0.4"/>
+  </g>
+  <g fill="#fbbf24">
+    <circle cx="740"  cy="260" r="1.5" opacity="0.5"/>
+    <circle cx="1060" cy="580" r="1"   opacity="0.45"/>
+    <circle cx="320"  cy="860" r="1.5" opacity="0.4"/>
+    <circle cx="1360" cy="760" r="1"   opacity="0.4"/>
+  </g>
+
+  <!-- Candle flame glow — bottom left corner -->
+  <ellipse cx="0" cy="900" rx="180" ry="180" fill="url(#ember1)" opacity="0.1"/>
+
+  <!-- Corner vignette warm glow -->
+  <ellipse cx="1440" cy="0" rx="220" ry="220" fill="url(#ember2)" opacity="0.08"/>
+</svg>

@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="orb1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#378ADD" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#378ADD" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#60b8ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#60b8ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#fbbf24" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="none"/>
+
+  <!-- Trophy outline — right side -->
+  <g transform="translate(1200, 300)" opacity="0.08" stroke="#fbbf24" fill="none" stroke-width="1">
+    <!-- Cup bowl -->
+    <path d="M-60,0 Q-70,80 -40,120 Q-20,150 0,160 Q20,150 40,120 Q70,80 60,0 Z"/>
+    <!-- Handles -->
+    <path d="M-60,20 Q-100,20 -100,60 Q-100,100 -60,100"/>
+    <path d="M60,20 Q100,20 100,60 Q100,100 60,100"/>
+    <!-- Stem -->
+    <line x1="0" y1="160" x2="0" y2="220"/>
+    <!-- Base -->
+    <rect x="-50" y="220" width="100" height="16" rx="4"/>
+    <!-- Stars on cup -->
+    <text x="-8" y="80" font-family="sans-serif" font-size="16" fill="#fbbf24" stroke="none" opacity="0.5">★</text>
+  </g>
+
+  <!-- Scoreboard panel -->
+  <g transform="translate(80, 80)" opacity="0.08" stroke="#378ADD" fill="none">
+    <rect width="280" height="120" rx="8" stroke-width="1"/>
+    <rect x="8" y="8" width="264" height="104" rx="6" stroke-width="0.5"/>
+    <!-- Score display -->
+    <text x="60" y="55" font-family="monospace" font-size="36" fill="#378ADD" stroke="none" opacity="0.6">03</text>
+    <text x="140" y="55" font-family="monospace" font-size="24" fill="#60b8ff" stroke="none" opacity="0.4">:</text>
+    <text x="168" y="55" font-family="monospace" font-size="36" fill="#378ADD" stroke="none" opacity="0.6">01</text>
+    <!-- Time -->
+    <text x="100" y="88" font-family="monospace" font-size="14" fill="#60b8ff" stroke="none" opacity="0.5">87:23</text>
+    <!-- Divider -->
+    <line x1="8" y1="68" x2="272" y2="68" stroke-width="0.4" opacity="0.4"/>
+  </g>
+
+  <!-- Speed motion arcs -->
+  <g stroke="#378ADD" stroke-width="0.6" opacity="0.09" fill="none" stroke-linecap="round">
+    <path d="M0,300 Q200,260 380,300"/>
+    <path d="M0,330 Q200,285 380,330"/>
+    <path d="M0,360 Q200,310 380,360"/>
+    <path d="M1060,560 Q1240,520 1440,560"/>
+    <path d="M1060,590 Q1240,545 1440,590"/>
+    <path d="M1060,620 Q1240,570 1440,620"/>
+  </g>
+
+  <!-- Jersey number fragments -->
+  <g font-family="Arial Black, sans-serif" font-weight="900" fill="#378ADD" opacity="0.06">
+    <text x="560"  y="280" font-size="120">7</text>
+    <text x="880"  y="700" font-size="100">23</text>
+    <text x="180"  y="800" font-size="80">10</text>
+    <text x="1200" y="820" font-size="90">9</text>
+  </g>
+
+  <!-- Soft glow nodes -->
+  <ellipse cx="1200" cy="300" rx="80"  ry="80"  fill="url(#orb3)" opacity="0.4"/>
+  <ellipse cx="220"  cy="140" rx="90"  ry="60"  fill="url(#orb1)" opacity="0.35"/>
+  <ellipse cx="660"  cy="340" rx="70"  ry="70"  fill="url(#orb2)" opacity="0.3"/>
+  <ellipse cx="960"  cy="640" rx="75"  ry="75"  fill="url(#orb1)" opacity="0.3"/>
+
+  <!-- Scattered light trail dots -->
+  <g fill="#378ADD">
+    <circle cx="420"  cy="160" r="1.5" opacity="0.38"/>
+    <circle cx="700"  cy="220" r="1"   opacity="0.32"/>
+    <circle cx="980"  cy="180" r="1.5" opacity="0.35"/>
+    <circle cx="260"  cy="460" r="1"   opacity="0.3"/>
+    <circle cx="820"  cy="480" r="1.5" opacity="0.35"/>
+    <circle cx="1300" cy="380" r="1"   opacity="0.3"/>
+    <circle cx="500"  cy="760" r="1.5" opacity="0.32"/>
+    <circle cx="1100" cy="780" r="1"   opacity="0.28"/>
+  </g>
+  <g fill="#fbbf24">
+    <circle cx="600"  cy="380" r="1.5" opacity="0.3"/>
+    <circle cx="1060" cy="500" r="1"   opacity="0.28"/>
+    <circle cx="340"  cy="620" r="1.5" opacity="0.3"/>
+    <circle cx="1380" cy="680" r="1"   opacity="0.26"/>
+  </g>
+
+  <!-- Ball outline — basketball -->
+  <g transform="translate(720, 720)" opacity="0.07" stroke="#fb923c" fill="none" stroke-width="0.8">
+    <circle r="55"/>
+    <path d="M-55,0 Q-20,-30 20,-30 Q55,-20 55,0"/>
+    <path d="M-55,0 Q-20,30 20,30 Q55,20 55,0"/>
+    <line x1="0" y1="-55" x2="0" y2="55"/>
+  </g>
+</svg>
